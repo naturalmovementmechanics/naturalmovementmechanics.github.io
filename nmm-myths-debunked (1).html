@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pelvic Health Myths Debunked: 16 Things Simply Not True | Natural Movement Mechanics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Primary */
+    --terracotta: #C4714A;
+    --sage: #7A8C6E;
+    --cream: #F5F0E8;
+    --brown: #3D2B1F;
+    --gold: #C9A96E;
+    /* Supporting */
+    --warm-white: #FDFAF5;
+    --deep-terracotta: #9B4E2A;
+    --light-sage: #8a9c7e;
+    --warm-taupe: #6b5a50;
+    --forest-green: #4a6b3a;
+    /* Overlays */
+    --brown-border: rgba(61,43,31,0.12);
+    --terracotta-subtle: var(--terracotta-subtle);
+    --gold-divider: var(--gold-divider);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--brown); line-height: 1.6; }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-left {
+    background: var(--brown);
+    padding: 80px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .cover-left::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: -1px;
+    width: 60px; height: 100%;
+    background: var(--cream);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+
+  .cover-right {
+    padding: 80px 56px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .cover-right::before {
+    content: '';
+    position: absolute;
+    top: 60px; right: 60px;
+    width: 200px; height: 200px;
+    border: 1px solid rgba(196,113,74,0.2);
+    border-radius: 50%;
+  }
+
+  .cover-right::after {
+    content: '';
+    position: absolute;
+    top: 90px; right: 90px;
+    width: 140px; height: 140px;
+    border: 1px solid rgba(122,140,110,0.15);
+    border-radius: 50%;
+  }
+
+  /* ── LOGO BAR ── */
+  .logo-bar {
+    background: var(--cream);
+    padding: 16px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--sage);
+  }
+  .logo-bar-right {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+  }
+
+  .cover-logo { display: none; }
+
+  .cover-badge {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 48px;
+  }
+
+  .cover-myth-count {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(80px, 14vw, 140px);
+    font-weight: 300;
+    color: rgba(253,250,245,0.08);
+    line-height: 0.85;
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    letter-spacing: -0.04em;
+    pointer-events: none;
+  }
+
+  .cover-left-content { position: relative; z-index: 1; }
+
+  .cover-left h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .cover-left h1 em {
+    font-style: italic;
+    color: var(--gold);
+    display: block;
+  }
+
+  .cover-left p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(253,250,245,0.6);
+    line-height: 1.7;
+    max-width: 320px;
+  }
+
+  .cover-right-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 20px;
+  }
+
+  .cover-right h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .cover-right p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--warm-taupe);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .cover-author-card {
+    border: 1px solid rgba(122,140,110,0.3);
+    padding: 20px 22px;
+    background: var(--warm-white);
+  }
+
+  .cover-author-card .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--brown);
+    margin-bottom: 4px;
+  }
+
+  .cover-author-card .cred {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+  }
+
+  .cover-logo {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(253,250,245,0.25);
+    margin-top: 48px;
+  }
+
+  /* ── INTRO ── */
+  .intro-section {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 80px 48px 0;
+  }
+
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 16px;
+  }
+
+  h1.serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 5vw, 50px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--brown);
+    margin-bottom: 24px;
+  }
+
+  h1.serif em { font-style: italic; color: var(--terracotta); }
+
+  p.body {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+
+  p.lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  /* ── MYTHS ── */
+  .myths-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+  }
+
+  .myth-card {
+    margin-bottom: 4px;
+    overflow: hidden;
+  }
+
+  .myth-header {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .myth-number {
+    background: var(--terracotta);
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    width: 72px;
+    min-width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    flex-shrink: 0;
+    padding: 24px 0;
+  }
+
+  .myth-label-block {
+    background: var(--brown);
+    flex: 1;
+    padding: 22px 28px;
+  }
+
+  .myth-tag {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 6px;
+  }
+
+  .myth-statement {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 400;
+    color: var(--cream);
+    font-style: italic;
+    line-height: 1.25;
+  }
+
+  .myth-body {
+    background: var(--warm-white);
+    padding: 32px 36px;
+    border-left: 3px solid var(--terracotta);
+  }
+
+  .truth-banner {
+    background: var(--terracotta);
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .truth-banner .truth-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.92);
+    flex-shrink: 0;
+    min-width: 48px;
+  }
+
+  .truth-banner .truth-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  .myth-body p {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+
+  .myth-body p:last-child { margin-bottom: 0; }
+
+  .pt-note {
+    background: rgba(122,140,110,0.1);
+    border-left: 3px solid var(--sage);
+    padding: 16px 20px;
+    margin-top: 20px;
+  }
+
+  .pt-note .note-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 6px;
+  }
+
+  .pt-note p {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.75;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+
+  /* ── ALTERNATE MYTH COLORS ── */
+  .myth-card:nth-child(even) .myth-number { background: var(--sage); }
+  .myth-card:nth-child(even) .myth-body { border-left-color: var(--sage); }
+  .myth-card:nth-child(even) .truth-banner { background: var(--sage); }
+  .myth-card:nth-child(even) .myth-tag { color: var(--gold); }
+
+  /* ── SECTION HEADER ── */
+  .section-heading {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 72px 48px 40px;
+  }
+
+  .gold-rule {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--sage), var(--gold));
+    margin: 24px 0;
+    opacity: 0.6;
+  }
+
+  /* ── SHAME CALLOUT ── */
+  .shame-callout {
+    background: var(--brown);
+    padding: 56px 52px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shame-callout::before {
+    content: '!';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 320px;
+    color: rgba(201,169,110,0.05);
+    position: absolute;
+    top: -60px; right: 40px;
+    line-height: 1;
+  }
+
+  .shame-callout h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 300;
+    color: var(--cream);
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+  }
+
+  .shame-callout p {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(253,250,245,0.92);
+    line-height: 1.8;
+    max-width: 540px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .shame-callout .stat-row {
+    display: flex;
+    gap: 48px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .shame-stat .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .shame-stat .stat-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(253,250,245,0.88);
+    letter-spacing: 0.06em;
+    max-width: 150px;
+    line-height: 1.5;
+  }
+
+  /* ── CREDENTIALS ── */
+  .cred-section {
+    background: rgba(122,140,110,0.07);
+    padding: 64px 0;
+    border-top: 3px solid var(--sage);
+  }
+
+  .cred-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 52px;
+    align-items: center;
+  }
+
+  .cred-portrait {
+    background: var(--light-sage);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .cred-portrait::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; right: -8px;
+    width: 100%; height: 100%;
+    border: 2px solid var(--terracotta);
+    z-index: -1;
+  }
+
+  .cred-portrait-initials {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 300;
+    color: var(--sage);
+    font-style: italic;
+  }
+
+  .cred-right h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--brown);
+    margin-bottom: 4px;
+    font-style: italic;
+  }
+
+  .cred-right .title {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 20px;
+  }
+
+  .cred-right p {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  .cred-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .cred-pill {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    border: 1px solid rgba(122,140,110,0.35);
+    padding: 6px 14px;
+    border-radius: 2px;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--terracotta);
+    padding: 72px 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.08);
+  }
+
+  .cta-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 300;
+    color: #fff;
+    font-style: italic;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-section p {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.75;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--brown);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 18px 44px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .cta-subtext {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 16px;
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brown);
+    padding: 32px 48px;
+    text-align: center;
+  }
+
+  footer .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  footer p {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(253,250,245,0.3);
+    line-height: 1.6;
+  }
+
+  .myth-gap { height: 3px; background: var(--cream); }
+
+  @media (max-width: 680px) {
+    .cover { grid-template-columns: 1fr; }
+    .cover-left::after { display: none; }
+    .cover-right { padding: 48px 28px 60px; }
+    .myths-wrap, .intro-section, .section-heading { padding-left: 24px; padding-right: 24px; }
+    .myth-number { width: 52px; min-width: 52px; font-size: 30px; }
+    .cred-inner { grid-template-columns: 1fr; }
+    .cred-portrait { display: none; }
+    .shame-callout { padding: 40px 28px; }
+    .cta-section { padding: 52px 28px; }
+  }
+
+  /* ══ MOBILE ══ */
+  @media (max-width: 640px) {
+    .logo-bar { padding: 12px 20px; }
+    .logo-bar svg { width: 220px !important; height: 57px !important; }
+    .logo-bar-right { display: none; }
+
+    .cover { grid-template-columns: 1fr; min-height: auto; }
+    .cover-left { padding: 48px 24px 40px; }
+    .cover-left::after { display: none; }
+    .cover-left h1 { font-size: 38px; }
+    .cover-right { display: none; }
+    .cover-myth-count { font-size: 100px; }
+
+    .intro-section { padding: 48px 22px 0; }
+    .myths-wrap { padding: 0 22px 48px; }
+    .section-heading { padding: 40px 22px 24px; }
+
+    .myth-number { width: 52px; min-width: 52px; font-size: 28px; }
+    .myth-statement { font-size: 18px; }
+    .myth-body { padding: 22px 20px; }
+    .truth-banner .truth-text { font-size: 15px; }
+
+    .shame-callout { padding: 40px 24px; }
+    .shame-callout .stat-row { gap: 28px; }
+    .shame-stat .stat-num { font-size: 36px; }
+
+    .cred-section { padding: 40px 0; }
+    .cred-inner { padding: 0 22px; grid-template-columns: 1fr; }
+    .cred-portrait { display: none; }
+
+    .cta-section { padding: 48px 24px; }
+    .cta-button { padding: 16px 28px; }
+
+    footer { padding: 24px 22px; flex-direction: column; }
+    footer p { text-align: left; }
+    footer svg { width: 200px !important; height: 62px !important; }
+  }
+
+  @media print {
+    body { background: white; }
+    .logo-bar, .cover-top-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ LOGO BAR ══ -->
+<div class="logo-bar">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="380" height="98">
+    <defs><style>.lbm-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.lbm-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.lbm-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+    <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+      <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+      <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+      <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+      <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <line x1="175" y1="62" x2="500" y2="62" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+    <text x="178" y="57" class="lbm-bn">Natural Movement</text>
+    <text x="180" y="82" class="lbm-sn">MECHANICS</text>
+    <text x="180" y="108" class="lbm-tl">rooted in science · free in movement</text>
+  </svg>
+  <span class="logo-bar-right">Clinical Education · naturalmovementmechanics.com</span>
+</div>
+
+<!-- ══ COVER ══ -->
+<section class="cover">
+  <div class="cover-left">
+    <div>
+      <div class="cover-badge">Natural Movement Mechanics</div>
+      <div class="cover-left-content">
+        <h1>Pelvic Health<br><em>Myths<br>Debunked</em></h1>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(18px,2.8vw,26px); font-weight:400; font-style:italic; color:var(--cream); line-height:1.45; max-width:340px; margin-bottom:0;"><strong style="font-style:normal; font-weight:600; color:var(--gold);">Sixteen things you've been told about your pelvic floor that simply aren't true</strong> — and what the clinical evidence actually says.</p>
+      </div>
+    </div>
+    <div class="cover-myth-count">16</div>
+  </div>
+  <div class="cover-right">
+    <div class="cover-right-label">Because you deserve real answers</div>
+    <h2>The misinformation about pelvic health is costing people years of unnecessary suffering.</h2>
+    <p>We don't talk about pelvic health enough — and when we do, we often get it wrong. This guide corrects the record with clinical accuracy, 20+ years of patient care, and zero judgment.</p>
+    <div class="cover-author-card">
+      <div class="name">Dr. Alli</div>
+      <div class="cred">PT, DPT · Doctor of Physical Therapy · 24 Years Clinical Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SHAME & STATS ══ -->
+<div class="shame-callout">
+  <h2>The silence around pelvic health isn't protecting anyone. It's just delaying care.</h2>
+  <p>Shame keeps people from asking questions, making appointments, and getting the treatment that would change their quality of life. This guide exists because I've watched it happen everywhere I've practiced — in outpatient orthopedic and pelvic health clinics, in hospital acute care units, in patients' own homes through home health, and even treating patients in remote areas of Alaska and at a U.S. Naval Hospital in Okinawa, Japan. Across every setting, every demographic, every zip code: the awareness is lacking, and the silence is costing people. Enough is enough. What follows is medical information. Read it like it's medical information.</p>
+  <div class="stat-row">
+    <div class="shame-stat">
+      <div class="stat-num">1 in 4</div>
+      <div class="stat-label">men will experience a pelvic floor disorder in their lifetime — most never know PT can help</div>
+    </div>
+    <div class="shame-stat">
+      <div class="stat-num">70%</div>
+      <div class="stat-label">of people doing kegels are doing them incorrectly — gripping instead of lifting</div>
+    </div>
+    <div class="shame-stat">
+      <div class="stat-num">80%</div>
+      <div class="stat-label">of stress incontinence cases improve significantly with pelvic floor PT</div>
+    </div>
+    <div class="shame-stat">
+      <div class="stat-num">6.5 yrs</div>
+      <div class="stat-label">average time people live with pelvic symptoms before seeking care</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ INTRO ══ -->
+<section class="intro-section">
+  <div class="section-label">From Dr. Alli's clinical desk</div>
+  <h1 class="serif">What I wish every patient <em>knew before</em> they walked in</h1>
+  <p class="lead">I have had the same conversations thousands of times. And the most common theme isn't the symptoms — it's the mythology that built up around them.</p>
+  <p class="body">Patients tell me they were told leaking after childbirth is permanent. They were told kegels fix everything. They were told nothing could be done. They were told it was just aging. They were told they were too sensitive, too tense — or simply too old, or that it was just menopause. They were told to deal with it.</p>
+  <p class="body">None of that is true. And it costs people — in quality of life, in missed activities, in pain, in years of unnecessary suffering. What follows are sixteen of the most common myths I encounter, corrected with the same clinical accuracy I've brought to every patient I've treated across more than 20 years of practice.</p>
+  <div class="gold-rule"></div>
+</section>
+
+<!-- ══ MYTHS ══ -->
+<div class="section-heading">
+  <div class="section-label">Sixteen myths. Sixteen corrections.</div>
+</div>
+
+<div class="myths-wrap">
+
+  <!-- MYTH 1 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">1</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"Leaking when you laugh or sneeze is just part of being a woman."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Stress urinary incontinence is a treatable clinical condition, not a normal life sentence.</span>
+      </div>
+      <p>Common does not mean normal, and it certainly doesn't mean inevitable. Stress urinary incontinence — leaking with physical exertion, laughing, coughing, or sneezing — results from pelvic floor muscles that aren't coordinating properly to manage intra-abdominal pressure. That's a functional problem with a functional solution.</p>
+      <p>Research consistently supports pelvic floor physical therapy as a first-line treatment for stress urinary incontinence, with success rates that outperform medication and compare favorably to surgical intervention — without the risks of either.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>I have helped patients resolve symptoms they'd lived with for 15, 20, even 30 years. The window for treatment doesn't close with time. If you've been leaking and tolerating it, please know: you don't have to.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 2 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">2</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"Just do kegels. Kegels fix everything."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Kegels can make certain conditions significantly worse. A tight pelvic floor is not a strong one.</span>
+      </div>
+      <p>Kegel exercises — voluntary pelvic floor contractions — are appropriate for hypotonic (underactive) pelvic floors. But a large proportion of people presenting with pelvic pain, urgency, frequency, and even some types of incontinence have hypertonic (overactive, too-tight) pelvic floors. For these individuals, kegels are contraindicated. Kegeling a too-tight muscle is like wrapping a rubber band around an already-swollen finger.</p>
+      <p>Before beginning any pelvic floor exercise program, the first step is assessment — understanding whether the primary dysfunction is weakness, incoordination, or hypertonicity. This is exactly what pelvic floor physical therapists are trained to evaluate.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>I'd estimate that at least 40% of patients referred to me for "do more kegels" guidance were actually hypertonic and needed relaxation and downtraining, not more contractions. Assessment first. Always.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 3 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">3</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"Pelvic pain during sex is just anxiety. It's in your head."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Dyspareunia and vaginismus are real, physiological, treatable conditions. The pain is real.</span>
+      </div>
+      <p>Pain with intercourse (dyspareunia — yes, it's hard to say and even harder to spell, so let's just call it painful sex) and involuntary pelvic floor muscle spasm (vaginismus) are well-documented clinical conditions with established treatment protocols. They involve real, measurable muscle dysfunction — often hypertonicity, trigger points, connective tissue restrictions, and neural sensitization. For some people with vaginismus, even tampon insertion is out of the question — not because of anatomy, but because of an involuntary protective muscle response that the nervous system has learned. That response can be unlearned with the right treatment.</p>
+      <p>Psychological factors absolutely co-occur — and they make complete sense. When someone has lived with pain that was dismissed, minimized, or blamed on anxiety for years, emotional responses to that pain become part of the picture. Physical therapy for pelvic pain takes the whole person into account: the physical presentation, the nervous system's learned responses, the emotional context, and the history of not being believed. What falls within our scope as PTs, we treat directly. What extends beyond it — whether that's trauma processing, anxiety, or relationship impacts — we refer to qualified colleagues who specialize in exactly that. Collaborative, whole-person care is how these conditions actually resolve. "Just relax" is not treatment. It never was.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>The number of patients I've seen who were told their pain was psychosomatic — and who had completely resolvable physiological dysfunction — is genuinely infuriating. You were not imagining it. Your pain had a source. It deserved treatment.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 4 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">4</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"After birth, leaking is just the new normal. Your body changed."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Postpartum pelvic floor dysfunction is nearly universally addressable with appropriate care.</span>
+      </div>
+      <p>Pregnancy and delivery create real physical changes — stretching, potential tearing, nerve involvement, and altered load-bearing demands on the pelvic floor. These are legitimate injuries that deserve the same rehabilitative attention as any other musculoskeletal injury. We wouldn't tell someone their knee "just changed" after surgery and send them home.</p>
+      <p>Postpartum pelvic floor rehabilitation has a strong evidence base and is standard practice in many countries. In the U.S., it remains undertreated — but the gap is in healthcare access, not clinical effectiveness. The treatment works.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>Many countries provide 6–20 sessions of pelvic PT to every postpartum woman as standard care. The U.S. largely doesn't. That's a healthcare policy failure, not a statement about what's possible. Wherever you are in your postpartum journey — 6 weeks or 6 years — treatment is still relevant.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 5 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">5</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"Pelvic floor issues are only a women's problem."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Everyone has a pelvic floor. Men, people of all gender identities, and children are all affected by pelvic dysfunction.</span>
+      </div>
+      <p>Male pelvic floor dysfunction includes urinary incontinence (particularly following prostate surgery), pelvic pain syndromes, erectile dysfunction with musculoskeletal components, chronic prostatitis, and coccyx pain. Pediatric pelvic floor dysfunction covers bedwetting, constipation, urgency, and frequency. Pelvic PT addresses all of it.</p>
+      <p>The persistent framing of pelvic health as a "women's issue" has left men and others without information they need — and without care they deserve. The pelvic floor doesn't discriminate.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>Some of the most impactful pelvic health outcomes I've seen have been with male patients who came in never having heard that pelvic PT was relevant to them. The surprise on their faces — and the results — stay with me.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 6 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">6</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"Bladder urgency and frequency just mean you need to stop drinking coffee."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Urgency and frequency are treatable pelvic floor symptoms, not purely dietary problems.</span>
+      </div>
+      <p>Urgency urinary incontinence (the "gotta go right now" sensation) and urinary frequency (going more than 8 times per day) are often driven by a phenomenon called an overactive bladder — which is typically a coordination issue between the bladder muscle, the pelvic floor, and the nervous system. Diet can be a contributing factor for some people, but it's rarely the primary or only cause.</p>
+      <p>Bladder retraining, pelvic floor rehabilitation, and urge suppression strategies are first-line clinical treatments. These work. Cutting out your morning coffee while still running to the bathroom every 45 minutes is not the answer.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>Bladder retraining is genuinely one of the most powerful and underutilized interventions I use. Patients who understand how to suppress the urge reflex — and why it works — often see symptom changes within two to three weeks. It's remarkable to watch.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 7 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">7</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"You shouldn't exercise if you have prolapse."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Movement, with appropriate guidance, is beneficial for pelvic organ prolapse — not contraindicated.</span>
+      </div>
+      <p>Pelvic organ prolapse (POP) — the descent of pelvic organs due to weakened support structures — is often treated with an exercise prohibition that isn't clinically warranted. The goal is not to avoid movement, but to load the pelvic floor appropriately: to strengthen the support system while managing intra-abdominal pressure intelligently during activity.</p>
+      <p>Pelvic floor PT teaches the exhale-on-exertion principle, load management strategies, and progressive strengthening that helps women with prolapse return to activity — including high-intensity exercise in many cases — safely and confidently.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>Women with prolapse have been told they can never run, lift, or jump again. That's often not accurate. What they need is proper pelvic floor management, not a life sentence of sedentary activity. Movement is medicine — including for prolapse.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 8 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">8</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"Low back pain and hip pain aren't related to the pelvic floor."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">The pelvic floor is the foundation of the core and deeply connected to lumbar and hip mechanics.</span>
+      </div>
+      <p>Your pelvic floor is the caudal component of a four-wall pressure management system that includes the diaphragm (top), the deep abdominals (front), the deep spinal muscles (back), and the pelvic floor (bottom). Dysfunction in one component is compensated by the others — creating a clinical presentation that often looks like back pain, hip tightness, or SI joint dysfunction with no obvious pelvic symptoms at all.</p>
+      <p>Treating persistent low back or hip pain without assessing the pelvic floor is treating part of the system. Pelvic PT routinely resolves back and hip pain that didn't respond to traditional orthopedic approaches.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>Some of my most satisfying cases have been orthopedic referrals — chronic back pain patients who had no idea their pelvic floor was involved. Addressing pelvic floor hypertonicity or incoordination resolved symptoms that years of traditional PT hadn't touched. The system is integrated. Treatment should be too.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 9 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">9</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"Surgery is the only real solution for pelvic floor issues."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Pelvic floor PT is first-line treatment for most pelvic conditions and should precede surgical consideration.</span>
+      </div>
+      <p>Clinical guidelines consistently recommend pelvic floor physical therapy before surgical intervention for stress urinary incontinence, urgency incontinence, pelvic organ prolapse, and pelvic pain syndromes. This is not because surgery is never appropriate — but because conservative treatment is effective, non-invasive, and reversible, while surgery carries risk and a defined recovery.</p>
+      <p>In my clinical experience, the majority of patients who were surgical candidates when they arrived improved sufficiently through conservative care to defer or avoid surgery entirely. That's not an argument against surgery. It's an argument for trying PT first.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>If a provider recommends surgery for a pelvic floor condition without first referring you to pelvic floor PT, that's worth discussing. Not as a challenge to their expertise — but because conservative care deserves a genuine trial first.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 10 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">10</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"This is embarrassing to bring up with a doctor. They'll think it's not serious."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Pelvic symptoms are clinical presentations. They belong in the exam room. You deserve to be taken seriously.</span>
+      </div>
+      <p>Pelvic floor dysfunction is not a niche concern. It affects hundreds of millions of people globally across every age, gender, and demographic. It is covered in medical and physical therapy curricula, has an extensive peer-reviewed literature, and is the subject of active clinical research. It is a legitimate medical domain.</p>
+      <p>If you have been dismissed, told your symptoms are normal, or told nothing can be done, seek a second opinion — preferably from a pelvic floor physical therapist who specializes in this area. You are not being dramatic. Your symptoms have names, and they have treatments.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>Advocating for yourself in a medical setting is hard. Especially when you've been dismissed before. I want to be clear: what you're experiencing is real, it's treatable, and you deserve a provider who takes it seriously. Find that provider.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 11 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">11</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"Menopause means bladder control is gone forever."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Hormonal changes affect pelvic tissue, but they don't close the door on effective treatment.</span>
+      </div>
+      <p>The tissue changes of perimenopause and menopause — including genitourinary syndrome of menopause (GSM) — do affect pelvic floor function. Declining estrogen can contribute to tissue atrophy, reduced elasticity, and increased vulnerability to urinary symptoms. These are real changes with real effects.</p>
+      <p>They are also addressable. Pelvic floor PT, local hormonal support (when appropriate and medically indicated), and lifestyle modifications can significantly improve or resolve symptoms. Age is not a disqualifier for treatment. I have treated patients in their 70s and 80s who experienced meaningful clinical improvements.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>The framing of menopause as a one-way door to pelvic decline isn't accurate and it isn't fair to the patients living through it. Hormonal changes are real. So are the treatment options. Age is not a contraindication.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 12 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">12</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"If it were really treatable, my doctor would have told me."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Pelvic health is a specialty. Most primary care providers receive limited training in it. Seeking a specialist is appropriate.</span>
+      </div>
+      <p>The existence of effective treatment doesn't guarantee that every provider is aware of it, trained to assess it, or in the habit of referring for it. Primary care physicians, OBGYNs, and even many physical therapists receive limited training specific to pelvic floor rehabilitation. This is a gap in medical education, not evidence that treatment doesn't exist.</p>
+      <p>Pelvic floor physical therapists are specialists who complete advanced training beyond their entry-level PT degree. When pelvic symptoms are present, a referral to a pelvic PT is appropriate — and if one isn't offered, self-referral (permitted in most U.S. states) is an option.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>I've had patients tell me their OBGYN told them pelvic PT "probably wouldn't help." I've also had those same patients come back three months later with resolved symptoms, asking why no one told them sooner. The answer is: the system has gaps. That's why you're reading this.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 13 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">13</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"If you have bladder leakage, drinking less water will help."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Dehydration makes incontinence worse. Concentrated urine is a bladder irritant that increases urgency and frequency.</span>
+      </div>
+      <p>It seems logical: less fluid in means less fluid out. But the bladder doesn't work that way. Concentrated, dark urine chemically irritates the bladder wall, triggering the detrusor muscle to contract more urgently and more frequently. People who restrict fluids often end up with worse urgency, more frequent leakage, and urine that is harder to control when the urge does arrive.</p>
+      <p>The clinical recommendation for most people with incontinence is adequate hydration — typically 6–8 cups of water daily — while managing known bladder irritants such as caffeine, carbonated drinks, artificial sweeteners, and alcohol, which amplify urgency independently of fluid volume. The goal is a well-hydrated bladder with dilute, non-irritating urine. Not a dehydrated one braced for the next trip to the bathroom.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>Fluid restriction is one of the most common self-management strategies I see — and one of the most counterproductive. Patients are often genuinely surprised to learn that drinking more water is part of the treatment. I've watched urgency symptoms improve significantly just by addressing hydration and cutting caffeine, before a single pelvic floor exercise was added.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 14 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">14</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"Pelvic floor exercises are best done lying down."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Lying down is a starting point, not a destination. Real-life function requires training the pelvic floor in real-life positions.</span>
+      </div>
+      <p>Performing pelvic floor contractions while lying on your back is a useful entry point — gravity is reduced, postural demands are minimal, and you can focus entirely on finding and isolating the muscles. But life does not happen lying down. You sneeze standing up. You lift things in a squat. You run, jump, laugh, and carry children on your feet. If rehabilitation stays on the mat, the skills learned there don't automatically transfer to the upright, loaded, dynamic movement where they're actually needed.</p>
+      <p>Effective pelvic floor rehabilitation progresses deliberately through positions: from lying to sitting to standing to loaded standing to impact. Each position adds postural demand, gravitational load, and intra-abdominal pressure — progressively training the pelvic floor to respond in the contexts that matter. A kegel performed lying in bed is practice. A pre-contraction before a jump, performed standing, is function.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>When I transitioned patients from mat-based kegels to standing and functional training, outcomes changed dramatically. The patient who could isolate her pelvic floor perfectly lying down but leaked every time she stood up to sneeze wasn't failing — she was training in the wrong position. Position progression isn't advanced; it's essential.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 15 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">15</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"If you have leakage or prolapse, you need to stop running and high-impact exercise."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Impact exercise is a goal, not a contraindication. With proper rehabilitation, most people can return to running, jumping, and high-intensity movement.</span>
+      </div>
+      <p>Blanket advice to avoid all impact exercise is one of the most quality-of-life-limiting recommendations in pelvic health — and one of the least evidence-based. Running, jumping, and high-intensity training are not inherently harmful to the pelvic floor. What causes problems is a pelvic floor that hasn't been prepared to manage the load those activities create. The solution is preparation and progressive training, not permanent avoidance.</p>
+      <p>For stress urinary incontinence, techniques like The Knack (a pre-contraction before impact), breath management, and progressive impact loading allow most people to return to full activity. For pelvic organ prolapse, the picture is more nuanced — severity, symptoms, and individual factors all matter — but research consistently shows that guided return to impact exercise is appropriate for many people with prolapse and does not worsen outcomes when load is managed intelligently. A pelvic PT can help determine readiness and guide the progression safely.</p>
+      <p>For some people, a pessary — a removable supportive device worn inside the vagina — can be a valuable bridge tool during the return-to-impact process. Custom-fitted devices are available through a healthcare provider, but there are also over-the-counter insertable options that are easy to access and worth exploring as a starting point. Either way, the mechanism is the same: the device provides mechanical support for the pelvic organs during exercise, reducing symptoms enough to allow confident participation in higher-demand activity while pelvic floor rehabilitation continues in parallel. A pessary is not a replacement for strengthening and retraining the pelvic floor; it is a tool that makes the training possible for people who would otherwise avoid activity altogether due to symptom fear. Used this way, it's not a workaround — it's a strategy.</p>
+      <p>What activity are you not doing because of pelvic floor symptoms? That activity is a treatment goal — not a closed door.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>I have helped patients return to marathon training, CrossFit, trail running, and competitive sport after being told they'd never do those things again because of leakage or prolapse. The work isn't always fast, but the door is rarely as closed as people have been led to believe. Being told to just stop is not a treatment plan.</p>
+      </div>
+    </div>
+  </div>
+  <div class="myth-gap"></div>
+
+  <!-- MYTH 16 -->
+  <div class="myth-card">
+    <div class="myth-header">
+      <div class="myth-number">16</div>
+      <div class="myth-label-block">
+        <div class="myth-tag">Myth</div>
+        <div class="myth-statement">"If you're constipated, you just need more fiber."</div>
+      </div>
+    </div>
+    <div class="myth-body">
+      <div class="truth-banner">
+        <span class="truth-label">Truth</span>
+        <span class="truth-text">Fiber is one piece of a complex picture. Constipation often involves pelvic floor muscle dysfunction that fiber alone cannot address.</span>
+      </div>
+      <p>Dietary fiber and adequate hydration are genuinely important for bowel health — but in a meaningful proportion of people with chronic constipation, the problem isn't what goes in. It's what the pelvic floor does when it's time to evacuate. A condition called pelvic floor dyssynergia — in which the muscles that should relax during defecation instead contract — can make evacuation difficult regardless of stool consistency or fiber intake. Adding more fiber to a non-relaxing pelvic floor can actually worsen symptoms, creating bulkier stool that is harder to pass against a muscle that isn't coordinating correctly.</p>
+      <p>Chronic straining — the consequence of pushing against a tight, uncoordinated pelvic floor — is itself a significant clinical problem. It creates sustained downward pressure on the pelvic organs, contributes to hemorrhoid development, and over time is a risk factor for prolapse. The pelvic floor mechanics of defecation — proper squatting posture, diaphragmatic breathing, coordinated relaxation — are teachable and treatable. This is physical therapy.</p>
+      <div class="pt-note">
+        <div class="note-label">20+ Years in Clinic</div>
+        <p>Constipation is one of the most overlooked aspects of pelvic health — patients rarely think of it as a pelvic floor issue, and providers rarely ask. But chronic straining is one of the highest-load things a pelvic floor encounters. When I address bowel mechanics alongside bladder and pain symptoms, outcomes across all three improve. The system is connected. Always.</p>
+      </div>
+    </div>
+  </div>
+
+
+</div><!-- end myths-wrap -->
+
+<!-- ══ CREDENTIALS ══ -->
+<div class="cred-section">
+  <div class="cred-inner">
+    <div class="cred-portrait">
+      <div class="cred-portrait-initials">A.</div>
+    </div>
+    <div class="cred-right">
+      <h3>Dr. Alli</h3>
+      <p>I started Natural Movement Mechanics because the gap between what patients deserve to know and what they're actually told is too large to ignore. This guide is one piece of that. The clinical care I provide is another.</p>
+      <p>Pelvic health is medical. It's treatable. And you are worth every bit of it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <h2>More clarity where this came from.</h2>
+  <p>Natural Movement Mechanics publishes ongoing pelvic health education for people who are done being dismissed, confused, or told to just deal with it. Follow along for evidence-based content from a Doctor of Physical Therapy with 20+ years in clinical practice.</p>
+  <a class="cta-button" href="https://naturalmovementmechanics.com" target="_blank">Visit naturalmovementmechanics.com</a>
+  <div class="cta-subtext">Free resources · Clinical education · No jargon</div>
+</section>
+
+<div style="max-width:620px; margin:0 auto 20px; padding:16px 20px; border:1px solid rgba(61,43,31,0.15); border-left:3px solid var(--sage);">
+    <p style="font-family:'Jost',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); margin-bottom:8px;">A note on this content</p>
+    <p style="font-family:'Jost',sans-serif; font-size:13px; font-weight:400; color:var(--brown); line-height:1.75; margin:0;">This guide is educational in nature and reflects the professional knowledge of a licensed Doctor of Physical Therapy. It does not establish a provider-patient relationship or constitute a clinical evaluation, diagnosis, or treatment plan. Pelvic health conditions vary widely — the information here is intended to inform and empower, not to replace individualized assessment and care by a licensed provider.</p>
+  </div>
+<footer>
+  <div style="background:var(--cream); display:inline-block; padding:16px 20px 10px; margin-bottom:16px; border-bottom:2px solid var(--sage);">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="280" height="86">
+    <defs><style>.fm-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.fm-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.fm-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+    <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+      <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+      <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+      <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+      <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <line x1="175" y1="62" x2="500" y2="62" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+    <text x="178" y="57" class="fm-bn">Natural Movement</text>
+    <text x="180" y="82" class="fm-sn">MECHANICS</text>
+    <text x="180" y="108" class="fm-tl">rooted in science · free in movement</text>
+  </svg>
+  </div>
+  <p>Dr. Alli · PT, DPT · naturalmovementmechanics.com</p>
+  <p style="margin-top:6px;">© Natural Movement Mechanics. For educational purposes. This content does not constitute medical advice or replace individualized clinical evaluation and care.</p>
+</footer>
+
+</body>
+</html>

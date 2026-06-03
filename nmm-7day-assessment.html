@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7-Day Pelvic Health Self-Assessment | Natural Movement Mechanics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Primary */
+    --terracotta: #C4714A;
+    --sage: #7A8C6E;
+    --cream: #F5F0E8;
+    --brown: #3D2B1F;
+    --gold: #C9A96E;
+    /* Supporting */
+    --warm-white: #FDFAF5;
+    --deep-terracotta: #9B4E2A;
+    --light-sage: #8a9c7e;
+    --warm-taupe: #6b5a50;
+    --forest-green: #4a6b3a;
+    /* Overlays */
+    --brown-border: rgba(61,43,31,0.12);
+    --terracotta-subtle: var(--terracotta-subtle);
+    --gold-divider: var(--gold-divider);
+    --rule: rgba(61,43,31,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--brown); }
+
+  /* ════════════════════════
+     COVER
+  ════════════════════════ */
+  .cover {
+    min-height: 100vh;
+    background: var(--warm-white);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-top-bar {
+    background: var(--cream);
+    padding: 16px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--sage);
+  }
+
+  .cover-top-bar .brand {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brown);
+  }
+
+  .cover-top-bar .series {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--warm-taupe);
+  }
+
+  /* ── HERO SECTION (full width) ── */
+  .cover-hero {
+    background: var(--brown);
+    padding: 80px 72px 72px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-hero::before {
+    content: '7';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 520px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.04);
+    position: absolute;
+    bottom: -80px;
+    right: 60px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .cover-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 8vw, 108px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 0.92;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .cover-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-author-dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .cover-author-text .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.1;
+  }
+
+  .cover-author-text .cred {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.6);
+  }
+
+  /* ── TRACKER SECTION (below hero, cream bg) ── */
+  .cover-tracker-section {
+    background: var(--cream);
+    padding: 44px 72px 52px;
+    border-top: 3px solid var(--sage);
+  }
+
+  .cover-right-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 20px;
+  }
+
+  /* Legacy .cover-main and .cover-left/.cover-right kept for compat */
+  .cover-main { display: contents; }
+  .cover-left  { display: contents; }
+  .cover-right { display: contents; }
+
+
+  .tracker-preview {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+  }
+
+  .tracker-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    background: var(--warm-white);
+    padding: 18px 16px 16px;
+    border-top: 3px solid transparent;
+    border-left: none;
+  }
+
+  .tracker-row.active { border-top-color: var(--terracotta); }
+  .tracker-row.sage   { border-top-color: var(--sage); }
+  .tracker-row.gold   { border-top-color: var(--gold); }
+
+  .tracker-day-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+  }
+
+  .tracker-row.sage .tracker-day-label { color: var(--sage); }
+  .tracker-row.gold .tracker-day-label { color: var(--gold); }
+
+  .tracker-day-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.25;
+  }
+
+  .tracker-dots {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .tracker-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1.5px solid var(--rule);
+    background: transparent;
+  }
+
+  .cover-bottom-bar {
+    background: var(--brown);
+    padding: 20px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cover-bottom-bar p {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: rgba(253,250,245,0.72);
+  }
+
+  .cover-bottom-bar .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+
+  /* ════════════════════════
+     HOW TO USE
+  ════════════════════════ */
+  .how-section {
+    background: var(--brown);
+    padding: 72px 0;
+  }
+
+  .how-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+
+  .how-inner .section-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  .how-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 300;
+    color: var(--cream);
+    font-style: italic;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    max-width: 560px;
+  }
+
+  .how-inner p {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(253,250,245,0.88);
+    line-height: 1.85;
+    max-width: 580px;
+    margin-bottom: 16px;
+  }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .how-card {
+    background: rgba(253,250,245,0.05);
+    padding: 28px 24px;
+    border-top: 2px solid transparent;
+  }
+
+  .how-card.t { border-top-color: var(--terracotta); }
+  .how-card.s { border-top-color: var(--sage); background: rgba(122,140,110,0.12); }
+  .how-card.g { border-top-color: var(--gold); }
+
+  .how-card .hc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: rgba(253,250,245,0.55);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .how-card .hc-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .how-card p {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(253,250,245,0.85);
+    line-height: 1.75;
+    margin-bottom: 0;
+    max-width: none;
+  }
+
+  /* MEDICAL NOTE */
+  .medical-note {
+    background: rgba(201,169,110,0.1);
+    border: 1px solid var(--gold-divider);
+    padding: 20px 24px;
+    margin-top: 36px;
+    max-width: 580px;
+  }
+
+  .medical-note .mn-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .medical-note p {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(253,250,245,0.82);
+    margin-bottom: 0;
+  }
+
+  /* ════════════════════════
+     ASSESSMENT DAYS
+  ════════════════════════ */
+  .days-container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 56px 80px;
+  }
+
+  /* Day card architecture */
+  .day-card {
+    margin-top: 56px;
+    border-top: 1px solid var(--rule);
+    padding-top: 48px;
+  }
+
+  .day-card-header {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 36px;
+    margin-bottom: 36px;
+    align-items: start;
+  }
+
+  .day-number-col {
+    text-align: center;
+  }
+
+  .day-num-big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 0.85;
+    margin-bottom: 6px;
+    color: var(--terracotta);
+  }
+
+  .day-card:nth-child(2n) .day-num-big { color: var(--sage); }
+  .day-card:nth-child(3n) .day-num-big { color: var(--gold); }
+
+  .day-word {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(61,43,31,0.35);
+  }
+
+  .day-focus {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 8px;
+  }
+
+  .day-card:nth-child(2n) .day-focus { color: var(--sage); }
+  .day-card:nth-child(3n) .day-focus { color: var(--gold); }
+
+  .day-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .day-title em { font-style: italic; color: var(--terracotta); }
+  .day-card:nth-child(2n) .day-title em { color: var(--sage); }
+
+  .day-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--brown);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  /* Context block */
+  .day-context {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.85;
+    margin-bottom: 28px;
+    padding-left: 136px; /* align with header right col */
+  }
+
+  /* Assessment questions */
+  .assessment-block {
+    background: var(--warm-white);
+    padding: 32px 36px;
+    margin-bottom: 3px;
+  }
+
+  .assessment-block-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .day-card:nth-child(2n) .assessment-block-label { color: var(--sage); }
+  .day-card:nth-child(3n) .assessment-block-label { color: var(--gold); }
+
+  .question-item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .question-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .question-item:first-of-type { padding-top: 0; }
+
+  .q-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(61,43,31,0.3);
+    padding-top: 1px;
+    line-height: 1;
+  }
+
+  .q-content {}
+
+  .q-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--brown);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  /* Scale */
+  .scale-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .scale-label-end {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--warm-taupe);
+    white-space: nowrap;
+  }
+
+  .scale-boxes {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .scale-box {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(61,43,31,0.3);
+    background: #fff;
+    flex-shrink: 0;
+  }
+
+  /* Yes/No */
+  .yn-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .yn-box {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brown); /* rgba(61,43,31,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .yn-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1.5px solid var(--rule);
+    background: #fff;
+    flex-shrink: 0;
+  }
+
+  /* Frequency selector */
+  .freq-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .freq-chip {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--brown);
+    border: 1.5px solid var(--rule);
+    padding: 5px 10px;
+    background: #fff;
+    white-space: nowrap;
+  }
+
+  /* Write-in line */
+  .write-line {
+    height: 1px;
+    background: var(--rule);
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .write-line::after {
+    content: 'Write in';
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: rgba(61,43,31,0.25);
+    position: absolute;
+    right: 0;
+    top: 4px;
+  }
+
+  .write-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  /* PT insight */
+  .pt-insight {
+    background: var(--brown);
+    padding: 22px 28px;
+    margin-top: 3px;
+    margin-bottom: 0;
+  }
+
+  .pt-insight .pi-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .pt-insight p {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(253,250,245,0.92);
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* What to look for */
+  .look-for {
+    background: rgba(122,140,110,0.08);
+    border-left: 3px solid var(--sage);
+    padding: 20px 26px;
+    margin-top: 0;
+    margin-bottom: 3px;
+  }
+
+  .look-for .lf-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .look-for ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .look-for ul li {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.7;
+    padding-left: 20px;
+    position: relative;
+    margin: 0;
+  }
+
+  .look-for ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+    font-size: 12px;
+  }
+
+  /* ════════════════════════
+     SCORING PAGE
+  ════════════════════════ */
+  .scoring-section {
+    background: rgba(122,140,110,0.06);
+    padding: 72px 0;
+    border-top: 3px solid var(--sage);
+    margin-top: 56px;
+  }
+
+  .scoring-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 18px;
+  }
+
+  .scoring-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 400;
+    color: var(--brown);
+    font-style: italic;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .scoring-inner p {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.85;
+    margin-bottom: 16px;
+    max-width: 600px;
+  }
+
+  .score-zones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    margin: 36px 0;
+  }
+
+  .score-zone {
+    padding: 28px 24px;
+  }
+
+  .score-zone.green { background: rgba(122,140,110,0.1); }
+  .score-zone.amber { background: rgba(201,169,110,0.1); }
+  .score-zone.red   { background: rgba(196,113,74,0.1); }
+
+  .sz-range {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 6px;
+    line-height: 1;
+  }
+
+  .score-zone.green .sz-range { color: var(--sage); }
+  .score-zone.amber .sz-range { color: var(--gold); }
+  .score-zone.red .sz-range   { color: var(--terracotta); }
+
+  .sz-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .score-zone.green .sz-label { color: var(--sage); }
+  .score-zone.amber .sz-label { color: var(--gold); }
+  .score-zone.red .sz-label   { color: var(--terracotta); }
+
+  .sz-desc {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.75;
+  }
+
+  /* Category summary table */
+  .summary-table {
+    border-top: 1px solid var(--rule);
+    margin-top: 40px;
+  }
+
+  .summary-row {
+    display: grid;
+    grid-template-columns: 1fr 120px 120px;
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .summary-row.header {
+    padding-bottom: 8px;
+  }
+
+  .summary-row.header span {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(61,43,31,0.4);
+    text-align: center;
+  }
+
+  .summary-row.header span:first-child { text-align: left; }
+
+  .sr-category {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--brown);
+  }
+
+  .sr-score-box {
+    border: 1.5px solid var(--rule);
+    height: 32px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    color: rgba(61,43,31,0.25);
+  }
+
+  /* ════════════════════════
+     NEXT STEPS
+  ════════════════════════ */
+  .next-section {
+    background: var(--cream);
+    padding: 72px 0;
+  }
+
+  .next-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+
+  .next-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 400;
+    color: var(--brown);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
+  .next-inner .sub {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+
+  .next-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .next-card {
+    background: var(--warm-white);
+    padding: 30px 28px;
+    border-top: 2px solid var(--rule);
+  }
+
+  .next-card.featured {
+    background: var(--terracotta);
+    border-top-color: transparent;
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 32px;
+    padding: 36px 36px;
+  }
+
+  .nc-icon { font-size: 28px; margin-bottom: 10px; }
+
+  .nc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--brown);
+    margin-bottom: 6px;
+  }
+
+  .next-card.featured .nc-title {
+    font-size: 26px;
+    color: #fff;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
+  .nc-desc {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.75;
+  }
+
+  .next-card.featured .nc-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    max-width: 480px;
+  }
+
+  .nc-btn {
+    display: inline-block;
+    background: var(--brown);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 16px 30px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* ════════════════════════
+     FOOTER
+  ════════════════════════ */
+  footer {
+    background: var(--brown);
+    padding: 28px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  footer .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  footer p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(253,250,245,0.3);
+    line-height: 1.6;
+    max-width: 520px;
+    text-align: right;
+  }
+
+  /* ════════════════════════
+     RESPONSIVE
+  ════════════════════════ */
+  @media (max-width: 700px) {
+    .cover-hero { padding: 48px 28px 40px; }
+    .cover-tracker-section { padding: 28px 20px 32px; }
+    .tracker-preview { grid-template-columns: repeat(2, 1fr); }
+    .cover-top-bar, .cover-bottom-bar { padding: 14px 28px; }
+    .how-inner { padding: 0 28px; }
+    .how-grid { grid-template-columns: 1fr; }
+    .days-container { padding: 0 28px 60px; }
+    .day-card-header { grid-template-columns: 72px 1fr; gap: 20px; }
+    .day-num-big { font-size: 52px; }
+    .day-context { padding-left: 92px; }
+    .scoring-inner, .next-inner { padding: 0 28px; }
+    .score-zones { grid-template-columns: 1fr; }
+    .next-grid { grid-template-columns: 1fr; }
+    .next-card.featured { grid-column: span 1; flex-direction: column; }
+    .summary-row { grid-template-columns: 1fr 80px 80px; }
+    footer { padding: 24px 28px; flex-direction: column; }
+    footer p { text-align: left; }
+  }
+
+  /* ══ MOBILE ══ */
+  @media (max-width: 640px) {
+    .cover-top-bar { padding: 12px 20px; }
+    .cover-top-bar svg { width: 200px !important; height: 62px !important; }
+    .cover-top-bar .series { display: none; }
+
+    .cover-main { grid-template-columns: 1fr; }
+    .cover-left { padding: 40px 22px 36px; }
+    .cover-title { font-size: 38px; }
+    .cover-right { display: none; }
+
+    .cover-bottom-bar { padding: 14px 22px; flex-direction: column; gap: 6px; text-align: center; }
+
+    .how-section { padding: 48px 0; }
+    .how-inner { padding: 0 22px; }
+    .how-grid { grid-template-columns: 1fr; }
+    .medical-note { margin-top: 24px; }
+
+    .days-container { padding: 0 20px 48px; }
+    .day-card-header { grid-template-columns: 72px 1fr; gap: 16px; }
+    .day-num-big { font-size: 52px; }
+    .day-context { padding-left: 88px; font-size: 16px; }
+    .day-title { font-size: 22px; }
+
+    .assessment-block { padding: 22px 18px; }
+    .q-text { font-size: 16px; }
+    .freq-row { gap: 5px; }
+    .freq-chip { font-size: 12px; padding: 5px 10px; }
+    .scale-boxes { gap: 2px; }
+    .scale-box { width: 22px; height: 22px; font-size: 9px; }
+    .scale-label-end { font-size: 11px; }
+
+    .scoring-inner { padding: 0 22px; }
+    .score-zones { grid-template-columns: 1fr; }
+    .summary-row { grid-template-columns: 1fr 72px 72px; }
+
+    .next-inner { padding: 0 22px; }
+    .next-grid { grid-template-columns: 1fr; }
+    .next-card.featured { grid-column: span 1; flex-direction: column; gap: 20px; }
+    .nc-btn { width: 100%; text-align: center; padding: 16px; }
+
+    footer { padding: 24px 22px; flex-direction: column; gap: 12px; }
+    footer p { text-align: left; }
+    footer svg { width: 200px !important; height: 62px !important; }
+  }
+
+  @media print {
+    body { background: white; }
+    .logo-bar, .cover-top-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ COVER ════════ -->
+<section class="cover">
+  <div class="cover-top-bar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="360" height="96">
+      <defs><style>.at2-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.at2-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.at2-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+      <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+        <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+        <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+        <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+        <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+        <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <line x1="175" y1="62" x2="500" y2="62" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+      <text x="178" y="57" class="at2-bn">Natural Movement</text>
+      <text x="180" y="82" class="at2-sn">MECHANICS</text>
+      <text x="180" y="108" class="at2-tl">rooted in science · free in movement</text>
+    </svg>
+    <span class="series">Clinical Education Series · Free Assessment Guide</span>
+  </div>
+
+  <!-- ══ HERO — full width dark ══ -->
+  <div class="cover-hero">
+    <div>
+      <div class="cover-eyebrow">7-Day Self-Assessment</div>
+      <h1 class="cover-title">
+        Know Your<br>
+        Pelvic<br>
+        <em>Floor.</em>
+      </h1>
+      <p class="cover-subtitle">A structured, PT-designed self-assessment you complete over one week — so you arrive at your care with clarity, not confusion.</p>
+      <div class="cover-author">
+        <div class="cover-author-dot">A.</div>
+        <div class="cover-author-text">
+          <div class="name">Dr. Alli</div>
+          <div class="cred">PT, DPT · 24 Years Clinical Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TRACKER — full width cream below ══ -->
+  <div class="cover-tracker-section">
+    <div class="cover-right-label">Your Assessment Week</div>
+    <div class="tracker-preview">
+      <div class="tracker-row active">
+        <span class="tracker-day-label">Day 1</span>
+        <span class="tracker-day-name">Bladder Patterns</span>
+        <div class="tracker-dots">
+          <div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div>
+        </div>
+      </div>
+      <div class="tracker-row sage">
+        <span class="tracker-day-label">Day 2</span>
+        <span class="tracker-day-name">Leakage &amp; Control</span>
+        <div class="tracker-dots">
+          <div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div>
+        </div>
+      </div>
+      <div class="tracker-row gold">
+        <span class="tracker-day-label">Day 3</span>
+        <span class="tracker-day-name">Pelvic Pain</span>
+        <div class="tracker-dots">
+          <div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div>
+        </div>
+      </div>
+      <div class="tracker-row active">
+        <span class="tracker-day-label">Day 4</span>
+        <span class="tracker-day-name">Bowel Health</span>
+        <div class="tracker-dots">
+          <div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div>
+        </div>
+      </div>
+      <div class="tracker-row sage">
+        <span class="tracker-day-label">Day 5</span>
+        <span class="tracker-day-name">Movement &amp; Exercise</span>
+        <div class="tracker-dots">
+          <div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div>
+        </div>
+      </div>
+      <div class="tracker-row gold">
+        <span class="tracker-day-label">Day 6</span>
+        <span class="tracker-day-name">Intimacy &amp; Function</span>
+        <div class="tracker-dots">
+          <div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div>
+        </div>
+      </div>
+      <div class="tracker-row active">
+        <span class="tracker-day-label">Day 7</span>
+        <span class="tracker-day-name">Quality of Life</span>
+        <div class="tracker-dots">
+          <div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div><div class="tracker-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-bottom-bar">
+    <p>naturalmovementmechanics.com</p>
+    <span class="tagline">rooted in science · free in movement</span>
+  </div>
+</section>
+
+<!-- ════════ HOW TO USE ════════ -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-label">Before you begin</div>
+    <h2>This is not a quiz. It's a clinical conversation — with yourself.</h2>
+    <p>Most people arrive at pelvic health care with a vague sense that something is off. This guide gives you the language and structure to get specific. That specificity matters — it shapes the care you receive, the questions you ask, and the outcomes you can expect.</p>
+    <p>Each day covers one domain. Answer honestly. Nothing here is embarrassing — it's all medical. The questions are adapted from validated clinical screening tools used in physical therapy practice.</p>
+
+    <div class="how-grid">
+      <div class="how-card t">
+        <div class="hc-num">01</div>
+        <div class="hc-title">One domain per day</div>
+        <p>Seven focused areas, each taking 2–3 minutes. One domain per day — observation over time tells you more than rushing through it all at once.</p>
+      </div>
+      <div class="how-card s">
+        <div class="hc-num">02</div>
+        <div class="hc-title">Answer honestly</div>
+        <p>No one is grading you. Underreporting is the most common barrier to good pelvic health care. The circle is empty — fill it accurately.</p>
+      </div>
+      <div class="how-card g">
+        <div class="hc-num">03</div>
+        <div class="hc-title">Bring this with you</div>
+        <p>Print or save this document and bring it to your first pelvic PT appointment. It will save 20 minutes of intake and give your clinician a meaningful starting point.</p>
+      </div>
+    </div>
+
+    <div class="medical-note">
+      <div class="mn-label">Important</div>
+      <p>This self-assessment is for educational awareness and does not constitute medical diagnosis. It is not a substitute for individualized clinical evaluation. If you are experiencing acute symptoms, pain, or significant concern, please seek care directly. Pelvic floor physical therapy has the potential to meaningfully improve function, reduce symptoms, and restore quality of life across a wide range of conditions — and in most situations, a skilled clinician can make a real and lasting difference. Assessment is always the essential first step.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ASSESSMENT DAYS ════════ -->
+<div style="background: var(--cream); padding-top: 1px;">
+<div class="days-container">
+
+  <!-- ── DAY 1 ── -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-number-col">
+        <div class="day-num-big">1</div>
+        <div class="day-word">Day</div>
+      </div>
+      <div>
+        <div class="day-focus">Bladder Patterns</div>
+        <h2 class="day-title">How is your bladder <em>actually</em> behaving?</h2>
+        <p class="day-intro">Most people don't know what "normal" looks like. Today, you establish your baseline.</p>
+      </div>
+    </div>
+    <p class="day-context">A typical bladder holds 300–600ml and signals fullness — not urgency — as it fills. Most people urinate 6–8 times per day and zero to once per night. If your patterns look different, that's useful clinical data, not something to be embarrassed about.</p>
+
+    <div class="assessment-block">
+      <div class="assessment-block-label">Section A · Frequency & Timing</div>
+
+      <div class="question-item">
+        <div class="q-num">1</div>
+        <div class="q-content">
+          <div class="q-text">How many times do you urinate during waking hours on a typical day?</div>
+          <div class="freq-row">
+            <div class="freq-chip">1–4 times</div>
+            <div class="freq-chip">5–7 times</div>
+            <div class="freq-chip">8–10 times</div>
+            <div class="freq-chip">10+ times</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">2</div>
+        <div class="q-content">
+          <div class="q-text">How many times do you wake to urinate at night?</div>
+          <div class="freq-row">
+            <div class="freq-chip">Never</div>
+            <div class="freq-chip">Once</div>
+            <div class="freq-chip">Twice</div>
+            <div class="freq-chip">3+ times</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">3</div>
+        <div class="q-content">
+          <div class="q-text">When you feel the urge to urinate, how quickly do you need to act on it?</div>
+          <div class="freq-row">
+            <div class="freq-chip">I can wait comfortably</div>
+            <div class="freq-chip">I prefer to go soon</div>
+            <div class="freq-chip">I need to go immediately</div>
+            <div class="freq-chip">I often don't make it</div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+    <div class="pt-insight">
+      <div class="pi-label">Dr. Alli's Clinical Note</div>
+      <p>Urinary frequency above 8 times/day and any nocturia beyond once are clinically significant. The "just in case" voiding pattern is one of the most common contributors to urgency — you're training your bladder to expect emptying at low volumes. This is addressable through bladder retraining. The triggers question is key for urgency urinary incontinence assessment.</p>
+    </div>
+    <div class="look-for">
+      <div class="lf-label">What to notice</div>
+      <ul>
+        <li>Going more than 8 times/day or more than once per night warrants clinical evaluation</li>
+        <li>Strong urgency that's hard to defer = overactive bladder pattern</li>
+        <li>Trigger-associated urgency = neurological-pelvic floor coordination issue</li>
+        <li>"Just in case" voiding = behavioral component that responds very well to retraining</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── DAY 2 ── -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-number-col">
+        <div class="day-num-big">2</div>
+        <div class="day-word">Day</div>
+      </div>
+      <div>
+        <div class="day-focus">Leakage & Control</div>
+        <h2 class="day-title">The leaking you've been <em>tolerating.</em></h2>
+        <p class="day-intro">Leaking is common. It is not normal. Today you name what's happening so it can be treated.</p>
+      </div>
+    </div>
+    <p class="day-context">There are three primary types of urinary incontinence: stress (leakage with physical pressure), urgency (leakage with the "gotta go" sensation), and mixed (both). Each has a distinct treatment pathway. Knowing your type matters clinically.</p>
+
+    <div class="assessment-block">
+      <div class="assessment-block-label">Section B · Leakage Assessment</div>
+
+      <div class="question-item">
+        <div class="q-num">1</div>
+        <div class="q-content">
+          <div class="q-text">Do you leak urine when you cough, sneeze, laugh, jump, or lift?</div>
+          <div class="freq-row">
+            <div class="freq-chip">Never</div>
+            <div class="freq-chip">Occasionally</div>
+            <div class="freq-chip">Often</div>
+            <div class="freq-chip">Almost always</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">2</div>
+        <div class="q-content">
+          <div class="q-text">Do you leak urine when you have a sudden urgent need to go — before you reach the bathroom?</div>
+          <div class="freq-row">
+            <div class="freq-chip">Never</div>
+            <div class="freq-chip">Occasionally</div>
+            <div class="freq-chip">Often</div>
+            <div class="freq-chip">Almost always</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">3</div>
+        <div class="q-content">
+          <div class="q-text">How much do you typically leak when it happens?</div>
+          <div class="freq-row">
+            <div class="freq-chip">A few drops</div>
+            <div class="freq-chip">A small amount</div>
+            <div class="freq-chip">Moderate</div>
+            <div class="freq-chip">A large amount</div>
+          </div>
+        </div>
+      </div>
+
+<div class="question-item">
+        <div class="q-num">6</div>
+        <div class="q-content">
+          <div class="q-text">On a scale of 0–10, how much does leakage bother you day to day?</div>
+          <div class="scale-row">
+            <span class="scale-label-end">Not at all</span>
+            <div class="scale-boxes">
+              <div class="scale-box">0</div><div class="scale-box">1</div><div class="scale-box">2</div>
+              <div class="scale-box">3</div><div class="scale-box">4</div><div class="scale-box">5</div>
+              <div class="scale-box">6</div><div class="scale-box">7</div><div class="scale-box">8</div>
+              <div class="scale-box">9</div><div class="scale-box">10</div>
+            </div>
+            <span class="scale-label-end">Severely</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-insight">
+      <div class="pi-label">Dr. Alli's Clinical Note</div>
+      <p>The activity avoidance question is the one that tells me the true functional impact — not the leakage itself, but what it's costing you. Patients often underestimate this because they've adapted so gradually. "I just don't jump on trampolines anymore" or "I stopped running two years ago" — those are losses. They're also recoverable ones.</p>
+    </div>
+    <div class="look-for">
+      <div class="lf-label">What to notice</div>
+      <ul>
+        <li>Leakage with exertion = stress urinary incontinence → pelvic floor coordination + The Knack</li>
+        <li>Leakage with urgency = urgency urinary incontinence → bladder retraining + possible OAB treatment</li>
+        <li>Both = mixed incontinence → requires combined approach</li>
+        <li>Any activity you're avoiding because of leakage is a treatment goal worth naming explicitly</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── DAY 3 ── -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-number-col">
+        <div class="day-num-big">3</div>
+        <div class="day-word">Day</div>
+      </div>
+      <div>
+        <div class="day-focus">Pelvic Pain</div>
+        <h2 class="day-title">Pain that was <em>dismissed</em> is still pain.</h2>
+        <p class="day-intro">If you've been told your pelvic pain is normal, stress-related, or untreatable — today we look at it clearly.</p>
+      </div>
+    </div>
+    <p class="day-context">Pelvic pain encompasses a broad territory: pain in the pelvic region at rest or with activity, pressure or heaviness, tailbone pain, pain with urination or bowel movements, pain with sitting, and pain with or after intercourse. All of these have clinical explanations and treatment pathways.</p>
+
+    <div class="assessment-block">
+      <div class="assessment-block-label">Section C · Pain Assessment</div>
+
+      <div class="question-item">
+        <div class="q-num">1</div>
+        <div class="q-content">
+          <div class="q-text">Do you experience any pain, pressure, or heaviness in your pelvic region (below your navel, between your hip bones, in your perineum or tailbone area)?</div>
+          <div class="yn-row">
+            <div class="yn-box"><div class="yn-circle"></div> Yes</div>
+            <div class="yn-box"><div class="yn-circle"></div> No</div>
+            <div class="yn-box"><div class="yn-circle"></div> Sometimes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">2</div>
+        <div class="q-content">
+          <div class="q-text">Rate your average pelvic discomfort over the past week (0 = none, 10 = severe)</div>
+          <div class="scale-row">
+            <span class="scale-label-end">None</span>
+            <div class="scale-boxes">
+              <div class="scale-box">0</div><div class="scale-box">1</div><div class="scale-box">2</div>
+              <div class="scale-box">3</div><div class="scale-box">4</div><div class="scale-box">5</div>
+              <div class="scale-box">6</div><div class="scale-box">7</div><div class="scale-box">8</div>
+              <div class="scale-box">9</div><div class="scale-box">10</div>
+            </div>
+            <span class="scale-label-end">Severe</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">3</div>
+        <div class="q-content">
+          <div class="q-text">Where do you feel pain or discomfort? (Select all that apply)</div>
+          <div class="freq-row">
+            <div class="freq-chip">Lower abdomen</div>
+            <div class="freq-chip">Tailbone / coccyx</div>
+            <div class="freq-chip">Perineum</div>
+            <div class="freq-chip">Inner thighs</div>
+            <div class="freq-chip">Low back</div>
+            <div class="freq-chip">Hips / SI joints</div>
+            <div class="freq-chip">Vaginal / vulvar</div>
+            <div class="freq-chip">Rectal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">4</div>
+        <div class="q-content">
+          <div class="q-text">When is pain present?</div>
+          <div class="freq-row">
+            <div class="freq-chip">At rest</div>
+            <div class="freq-chip">With sitting</div>
+            <div class="freq-chip">With exercise</div>
+            <div class="freq-chip">With urination</div>
+            <div class="freq-chip">With bowel movements</div>
+            <div class="freq-chip">With intercourse</div>
+            <div class="freq-chip">After intercourse</div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+    <div class="pt-insight">
+      <div class="pi-label">Dr. Alli's Clinical Note</div>
+      <p>Chronic pelvic pain (lasting more than 3 months) is one of the most underdiagnosed and undertreated conditions in physical therapy. If you've been told your pain is stress or anxiety, that may be a partial picture — but it is rarely the whole story. Pelvic floor hypertonicity, trigger points, neural sensitization, and connective tissue restrictions are all physical, measurable, and treatable. Your pain has a source.</p>
+    </div>
+    <div class="look-for">
+      <div class="lf-label">What to notice</div>
+      <ul>
+        <li>Any pain with sitting, intercourse, or urination is clinically significant regardless of duration</li>
+        <li>Tailbone pain frequently traces to pelvic floor muscle tension — not a bony injury</li>
+        <li>Low back + pelvic pain together often indicates integrated dysfunction (pelvic floor + lumbar + hip)</li>
+        <li>Duration matters: longer duration typically means more layers to address — but does not mean untreatable</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── DAY 4 ── -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-number-col">
+        <div class="day-num-big">4</div>
+        <div class="day-word">Day</div>
+      </div>
+      <div>
+        <div class="day-focus">Bowel Health</div>
+        <h2 class="day-title">The half of pelvic health <em>nobody talks about.</em></h2>
+        <p class="day-intro">Bowel function is pelvic floor function. And it's rarely assessed — until today.</p>
+      </div>
+    </div>
+    <p class="day-context">The pelvic floor coordinates both bladder and bowel function. Constipation creates sustained downward pressure that strains the pelvic floor over time. Fecal urgency and incomplete evacuation are both signs of pelvic floor incoordination. None of this is a digestion-only problem.</p>
+
+    <div class="assessment-block">
+      <div class="assessment-block-label">Section D · Bowel Function</div>
+
+      <div class="question-item">
+        <div class="q-num">1</div>
+        <div class="q-content">
+          <div class="q-text">How often do you have a bowel movement?</div>
+          <div class="freq-row">
+            <div class="freq-chip">Multiple times daily</div>
+            <div class="freq-chip">Once daily</div>
+            <div class="freq-chip">Every 2–3 days</div>
+            <div class="freq-chip">Every 4+ days</div>
+            <div class="freq-chip">Varies widely</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">2</div>
+        <div class="q-content">
+          <div class="q-text">Do you strain during bowel movements?</div>
+          <div class="freq-row">
+            <div class="freq-chip">Never</div>
+            <div class="freq-chip">Occasionally</div>
+            <div class="freq-chip">Often</div>
+            <div class="freq-chip">Almost always</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">3</div>
+        <div class="q-content">
+          <div class="q-text">Do you feel like you haven't fully emptied after a bowel movement?</div>
+          <div class="freq-row">
+            <div class="freq-chip">Never</div>
+            <div class="freq-chip">Sometimes</div>
+            <div class="freq-chip">Often</div>
+            <div class="freq-chip">Almost always</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">4</div>
+        <div class="q-content">
+          <div class="q-text">Do you experience urgency with bowel movements — a strong, sudden urge that's hard to defer?</div>
+          <div class="yn-row">
+            <div class="yn-box"><div class="yn-circle"></div> Yes</div>
+            <div class="yn-box"><div class="yn-circle"></div> No</div>
+            <div class="yn-box"><div class="yn-circle"></div> Sometimes</div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+    <div class="pt-insight">
+      <div class="pi-label">Dr. Alli's Clinical Note</div>
+      <p>Straining at stool and breath-holding during defecation are among the highest-load activities a pelvic floor encounters. Chronic straining is a significant contributor to prolapse progression, hemorrhoids, and pelvic pain. The mechanics of defecation — squatting position, relaxing rather than pushing, managing intra-abdominal pressure — are teachable. This is PT territory.</p>
+    </div>
+    <div class="look-for">
+      <div class="lf-label">What to notice</div>
+      <ul>
+        <li>Straining always or often = high load on the pelvic floor → posture, mechanics, and fiber/fluid need addressing</li>
+        <li>Incomplete evacuation + straining = possible pelvic floor dyssynergia (muscles contracting when they should relax)</li>
+        <li>Any fecal urgency or leakage = significant clinical finding → refer directly to pelvic PT</li>
+        <li>A squatting footstool under your feet can reduce straining substantially — a simple first intervention</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── DAY 5 ── -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-number-col">
+        <div class="day-num-big">5</div>
+        <div class="day-word">Day</div>
+      </div>
+      <div>
+        <div class="day-focus">Movement & Exercise</div>
+        <h2 class="day-title">What your body <em>avoids</em> tells us a great deal.</h2>
+        <p class="day-intro">Movement is both a context for symptoms and a treatment tool. Today we map both.</p>
+      </div>
+    </div>
+    <p class="day-context">The pelvic floor is a load-bearing structure. How it performs — or fails to perform — during exercise, lifting, impact activity, and daily movement reveals its functional status. Avoidance of activity due to symptoms is both a quality-of-life measure and a clinical indicator.</p>
+
+    <div class="assessment-block">
+      <div class="assessment-block-label">Section E · Movement Assessment</div>
+
+      <div class="question-item">
+        <div class="q-num">1</div>
+        <div class="q-content">
+          <div class="q-text">Do you experience leakage, urgency, pain, or pressure during any of the following? (Select all)</div>
+          <div class="freq-row">
+            <div class="freq-chip">Running</div>
+            <div class="freq-chip">Jumping</div>
+            <div class="freq-chip">Lifting</div>
+            <div class="freq-chip">Squats / lunges</div>
+            <div class="freq-chip">Sit-ups / crunches</div>
+            <div class="freq-chip">High-impact classes</div>
+            <div class="freq-chip">Swimming</div>
+            <div class="freq-chip">Yoga / stretching</div>
+            <div class="freq-chip">Walking (extended)</div>
+            <div class="freq-chip">Stairs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">2</div>
+        <div class="q-content">
+          <div class="q-text">Have you reduced or stopped any physical activities due to pelvic symptoms?</div>
+          <div class="yn-row">
+            <div class="yn-box"><div class="yn-circle"></div> Yes</div>
+            <div class="yn-box"><div class="yn-circle"></div> No</div>
+          </div>
+          <div class="write-lines" style="margin-top:12px;"><div class="write-line"></div><div class="write-line"></div></div>
+          <div style="font-size:11px; color:rgba(61,43,31,0.4); margin-top:6px; font-style:italic;">What did you stop — and when?</div>
+        </div>
+      </div>
+<div class="question-item">
+        <div class="q-num">4</div>
+        <div class="q-content">
+          <div class="q-text">Do you notice any pelvic heaviness, bulging, or pressure during or after exercise?</div>
+          <div class="yn-row">
+            <div class="yn-box"><div class="yn-circle"></div> Yes</div>
+            <div class="yn-box"><div class="yn-circle"></div> No</div>
+            <div class="yn-box"><div class="yn-circle"></div> Sometimes</div>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <div class="pt-insight">
+      <div class="pi-label">Dr. Alli's Clinical Note</div>
+      <p>Pelvic heaviness or a bulging sensation during or after exercise is a classic prolapse symptom that often goes unreported because people assume it's normal. It is not. It warrants assessment. Separately — what you've stopped doing is often more important than what you're currently doing. Those activities are your treatment benchmarks.</p>
+    </div>
+    <div class="look-for">
+      <div class="lf-label">What to notice</div>
+      <ul>
+        <li>Leakage with impact = stress urinary incontinence → The Knack + progressive loading</li>
+        <li>Breath-holding during exercise = major pelvic floor loading risk → exhale on exertion</li>
+        <li>Pelvic heaviness with exercise = probable prolapse symptom → requires PT assessment</li>
+        <li>Activity avoidance → this becomes your primary functional goal in treatment</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── DAY 6 ── -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-number-col">
+        <div class="day-num-big">6</div>
+        <div class="day-word">Day</div>
+      </div>
+      <div>
+        <div class="day-focus">Intimacy & Sexual Function</div>
+        <h2 class="day-title">This is <em>medical.</em> You are allowed to answer honestly.</h2>
+        <p class="day-intro">Pain during intimacy is not a relationship problem. It's a pelvic floor problem — with a clinical solution.</p>
+      </div>
+    </div>
+    <p class="day-context">Sexual health is a legitimate domain of physical therapy practice. Pain with intercourse (dyspareunia), inability to engage in intercourse (vaginismus), reduced sensation, postpartum changes to sexual function, and pain after intercourse are all assessable and treatable conditions. You are not expected to simply accept them.</p>
+
+    <div class="assessment-block">
+      <div class="assessment-block-label">Section F · Intimacy & Function</div>
+
+      <div class="question-item">
+        <div class="q-num">1</div>
+        <div class="q-content">
+          <div class="q-text">Do you currently experience pain with or after intercourse?</div>
+          <div class="freq-row">
+            <div class="freq-chip">Never</div>
+            <div class="freq-chip">Occasionally</div>
+            <div class="freq-chip">Often</div>
+            <div class="freq-chip">Always</div>
+            <div class="freq-chip">Not currently sexually active</div>
+          </div>
+        </div>
+      </div>
+<div class="question-item">
+        <div class="q-num">3</div>
+        <div class="q-content">
+          <div class="q-text">Do you have difficulty with or avoid penetration due to muscle tightness or spasm?</div>
+          <div class="yn-row">
+            <div class="yn-box"><div class="yn-circle"></div> Yes</div>
+            <div class="yn-box"><div class="yn-circle"></div> No</div>
+            <div class="yn-box"><div class="yn-circle"></div> Sometimes</div>
+            <div class="yn-box"><div class="yn-circle"></div> Prefer not to answer</div>
+          </div>
+        </div>
+      </div>
+<div class="question-item">
+        <div class="q-num">5</div>
+        <div class="q-content">
+          <div class="q-text">Rate the overall impact of pelvic symptoms on your intimate life (0 = no impact, 10 = severe impact)</div>
+          <div class="scale-row">
+            <span class="scale-label-end">None</span>
+            <div class="scale-boxes">
+              <div class="scale-box">0</div><div class="scale-box">1</div><div class="scale-box">2</div>
+              <div class="scale-box">3</div><div class="scale-box">4</div><div class="scale-box">5</div>
+              <div class="scale-box">6</div><div class="scale-box">7</div><div class="scale-box">8</div>
+              <div class="scale-box">9</div><div class="scale-box">10</div>
+            </div>
+            <span class="scale-label-end">Severe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-insight">
+      <div class="pi-label">Dr. Alli's Clinical Note</div>
+      <p>Superficial pain at entry typically indicates pelvic floor hypertonicity or tissue changes (including those from hormonal shifts or postpartum healing). Deep pain often involves internal muscle trigger points or organ-referral patterns. Both respond to manual therapy and targeted rehabilitation. The research on pelvic PT for dyspareunia and vaginismus is compelling — these are not conditions to simply endure.</p>
+    </div>
+    <div class="look-for">
+      <div class="lf-label">What to notice</div>
+      <ul>
+        <li>Any pain with intercourse = clinical finding regardless of duration or severity</li>
+        <li>Muscle-driven tightness (vaginismus pattern) → responds very well to pelvic PT + progressive desensitization</li>
+        <li>Deep pain + low back or hip pain = integrated dysfunction pattern</li>
+        <li>Postpartum changes to sexual function often go untreated for years — they shouldn't</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── DAY 7 ── -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-number-col">
+        <div class="day-num-big">7</div>
+        <div class="day-word">Day</div>
+      </div>
+      <div>
+        <div class="day-focus">Quality of Life</div>
+        <h2 class="day-title">The <em>real cost</em> of what you've been carrying.</h2>
+        <p class="day-intro">Today isn't about symptoms. It's about what those symptoms have cost you — and what you want back.</p>
+      </div>
+    </div>
+    <p class="day-context">Clinical outcomes in pelvic health are not only measured in leakage frequency or pain scores. They're measured in whether someone went back to running, laughed without fear, stopped planning their day around bathroom locations, or slept through the night. Today we assess that dimension.</p>
+
+    <div class="assessment-block">
+      <div class="assessment-block-label">Section G · Quality of Life Impact</div>
+
+      <div class="question-item">
+        <div class="q-num">1</div>
+        <div class="q-content">
+          <div class="q-text">Do you plan activities, routes, or outings around bathroom access?</div>
+          <div class="freq-row">
+            <div class="freq-chip">Never</div>
+            <div class="freq-chip">Occasionally</div>
+            <div class="freq-chip">Often</div>
+            <div class="freq-chip">It shapes most plans</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">2</div>
+        <div class="q-content">
+          <div class="q-text">Do you experience anxiety or worry related to pelvic symptoms?</div>
+          <div class="freq-row">
+            <div class="freq-chip">Never</div>
+            <div class="freq-chip">Occasionally</div>
+            <div class="freq-chip">Often</div>
+            <div class="freq-chip">Constantly</div>
+          </div>
+        </div>
+      </div>
+<div class="question-item">
+        <div class="q-num">4</div>
+        <div class="q-content">
+          <div class="q-text">Overall, how much have pelvic symptoms interfered with your daily life over the past month?</div>
+          <div class="scale-row">
+            <span class="scale-label-end">Not at all</span>
+            <div class="scale-boxes">
+              <div class="scale-box">0</div><div class="scale-box">1</div><div class="scale-box">2</div>
+              <div class="scale-box">3</div><div class="scale-box">4</div><div class="scale-box">5</div>
+              <div class="scale-box">6</div><div class="scale-box">7</div><div class="scale-box">8</div>
+              <div class="scale-box">9</div><div class="scale-box">10</div>
+            </div>
+            <span class="scale-label-end">Severely</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-item">
+        <div class="q-num">5</div>
+        <div class="q-content">
+          <div class="q-text">What is one specific thing you want to be able to do — or do again — without pelvic symptoms limiting you?</div>
+          <div class="write-lines">
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+            <div class="write-line"></div>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <div class="pt-insight">
+      <div class="pi-label">Dr. Alli's Clinical Note</div>
+      <p>Question 5 is the most important question in this entire assessment. That specific goal — running a 5K, playing with your kids on the floor, laughing freely, sleeping through the night — is the reason treatment matters. It's not about symptom reduction in the abstract. It's about that. Write it down. Bring it in. It becomes the north star of your care.</p>
+    </div>
+    <div class="look-for">
+      <div class="lf-label">What to notice</div>
+      <ul>
+        <li>Bathroom planning = functional impairment, not personal quirk — it has clinical significance</li>
+        <li>Anxiety about symptoms is common and valid; it also responds to treatment (symptom resolution reduces anxiety)</li>
+        <li>Duration without professional support is just a number — not a predictor of outcome. Treatment works regardless.</li>
+        <li>Your answer to question 5 is your treatment goal. It should be the first thing you say to your PT.</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end days-container -->
+</div>
+
+<!-- ════════ SCORING SUMMARY ════════ -->
+<section class="scoring-section">
+  <div class="scoring-inner">
+    <div class="section-label">After your 7 days</div>
+    <h2>Reading your results</h2>
+    <p>This assessment doesn't produce a single score — pelvic health doesn't work that way. What it produces is a clinical picture across seven domains. Use the summary below to identify where your most significant findings cluster.</p>
+
+    <div class="score-zones">
+      <div class="score-zone green">
+        <div class="sz-range">Low</div>
+        <div class="sz-label">Awareness Building</div>
+        <p class="sz-desc">Minimal symptoms with limited functional impact. Pelvic health education and preventive practice are appropriate next steps.</p>
+      </div>
+      <div class="score-zone amber">
+        <div class="sz-range">Mod</div>
+        <div class="sz-label">Clinical Attention</div>
+        <p class="sz-desc">Moderate symptoms with some functional limitation. A pelvic floor PT evaluation is strongly recommended to address patterns before they become entrenched.</p>
+      </div>
+      <div class="score-zone red">
+        <div class="sz-range">High</div>
+        <div class="sz-label">Priority Care</div>
+        <p class="sz-desc">Significant symptoms with functional impact across multiple domains. A pelvic PT evaluation and individualized treatment plan should be prioritized.</p>
+      </div>
+    </div>
+
+    <div class="summary-table">
+      <div class="summary-row header">
+        <span>Domain</span>
+        <span>Impact Level</span>
+        <span>Priority</span>
+      </div>
+      <div class="summary-row">
+        <div class="sr-category">Day 1 · Bladder Patterns</div>
+        <div class="sr-score-box">Circle one</div>
+        <div class="sr-score-box">Circle one</div>
+      </div>
+      <div class="summary-row">
+        <div class="sr-category">Day 2 · Leakage & Control</div>
+        <div class="sr-score-box">Circle one</div>
+        <div class="sr-score-box">Circle one</div>
+      </div>
+      <div class="summary-row">
+        <div class="sr-category">Day 3 · Pelvic Pain</div>
+        <div class="sr-score-box">Circle one</div>
+        <div class="sr-score-box">Circle one</div>
+      </div>
+      <div class="summary-row">
+        <div class="sr-category">Day 4 · Bowel Health</div>
+        <div class="sr-score-box">Circle one</div>
+        <div class="sr-score-box">Circle one</div>
+      </div>
+      <div class="summary-row">
+        <div class="sr-category">Day 5 · Movement & Exercise</div>
+        <div class="sr-score-box">Circle one</div>
+        <div class="sr-score-box">Circle one</div>
+      </div>
+      <div class="summary-row">
+        <div class="sr-category">Day 6 · Intimacy & Function</div>
+        <div class="sr-score-box">Circle one</div>
+        <div class="sr-score-box">Circle one</div>
+      </div>
+      <div class="summary-row">
+        <div class="sr-category">Day 7 · Quality of Life</div>
+        <div class="sr-score-box">Circle one</div>
+        <div class="sr-score-box">Circle one</div>
+      </div>
+    </div>
+
+    <p style="margin-top:24px; font-style:italic; font-family:'Cormorant Garamond',serif; font-size:17px;">Bring this completed assessment to your first pelvic PT appointment. It is the most efficient intake document you can bring.</p>
+  </div>
+</section>
+
+<!-- ════════ NEXT STEPS ════════ -->
+<section class="next-section">
+  <div class="next-inner">
+    <div class="section-label">What comes next</div>
+    <h2>You've done the work of seeing clearly. Now act on it.</h2>
+    <p class="sub">Seven days of honest self-reflection is a significant act. Most people never do it. Here's what I recommend based on more than 20 years of clinical practice.</p>
+
+    <div class="next-grid">
+      <div class="next-card">
+        <div class="nc-icon">📋</div>
+        <div class="nc-title">Find a Pelvic PT</div>
+        <p class="nc-desc">Search the Pelvic PT Finder at the Academy of Pelvic Health Physical Therapy (ptl.com) or ask your OB or primary care provider for a referral. In most U.S. states, you can self-refer without a prescription.</p>
+      </div>
+      <div class="next-card">
+        <div class="nc-icon">📖</div>
+        <div class="nc-title">Keep Learning</div>
+        <p class="nc-desc">Explore the companion guides — the 5-Day Pelvic Health Confidence Challenge and Pelvic Health Myths Debunked — available free at naturalmovementmechanics.com.</p>
+      </div>
+
+      <div class="next-card featured">
+        <div>
+          <div style="font-family:'Jost',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:10px;">Keep Going</div>
+          <div class="nc-title">More at Natural Movement Mechanics</div>
+          <p class="nc-desc">This assessment is one piece of a larger body of pelvic health education. Visit Natural Movement Mechanics for ongoing clinical content, free resources, and tools designed by a Doctor of Physical Therapy with 20+ years of experience — because you deserve more than a waiting room and a pamphlet.</p>
+        </div>
+        <a class="nc-btn" href="https://naturalmovementmechanics.com" target="_blank">Visit naturalmovementmechanics.com →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="max-width:620px; margin:0 auto 20px; padding:16px 20px; border:1px solid rgba(61,43,31,0.15); border-left:3px solid var(--sage);">
+    <p style="font-family:'Jost',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--sage); margin-bottom:8px;">About this assessment</p>
+    <p style="font-family:'Jost',sans-serif; font-size:13px; font-weight:400; color:var(--brown); line-height:1.75; margin:0;">This self-assessment is an educational tool reflecting the professional knowledge of a licensed Doctor of Physical Therapy. It does not constitute a clinical evaluation, diagnosis, or treatment plan, and does not establish a provider-patient relationship. Self-administered screening tools have inherent limitations — patterns you identify here are intended to guide a conversation with a qualified provider, not to replace one. If you are experiencing acute symptoms, significant pain, or sudden changes in function, please seek prompt medical attention rather than completing this guide.</p>
+  </div>
+<footer>
+  <div style="background:var(--cream); display:inline-block; padding:16px 20px 10px; margin-bottom:16px; border-bottom:2px solid var(--sage);">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="280" height="86">
+    <defs><style>.fa-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.fa-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.fa-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+    <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+      <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+      <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+      <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+      <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <line x1="175" y1="62" x2="500" y2="62" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+    <text x="178" y="57" class="fa-bn">Natural Movement</text>
+    <text x="180" y="82" class="fa-sn">MECHANICS</text>
+    <text x="180" y="108" class="fa-tl">rooted in science · free in movement</text>
+  </svg>
+  </div>
+  <p>Dr. Alli · PT, DPT · naturalmovementmechanics.com</p>
+  <p style="margin-top:6px;">© Natural Movement Mechanics. For educational purposes only. This assessment does not constitute medical diagnosis or replace individualized clinical evaluation and care by a licensed healthcare provider.</p>
+</footer>
+
+</body>
+</html>

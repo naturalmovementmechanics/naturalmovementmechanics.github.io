@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5-Day Pelvic Floor Confidence Challenge | Natural Movement Mechanics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracotta: #C4714A;
+    --sage: #7A8C6E;
+    --cream: #F5F0E8;
+    --brown: #3D2B1F;
+    --gold: #C9A96E;
+    --warm-white: #FDFAF5;
+    --deep-terracotta: #9B4E2A;
+    --light-sage: #8a9c7e;
+    --warm-taupe: #6b5a50;
+    --rule: rgba(61,43,31,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    min-height: 100vh;
+  }
+
+  /* ── LOGO BAR ── */
+  .logo-bar {
+    background: var(--cream);
+    padding: 18px 52px;
+    border-bottom: 2px solid var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-bar-right {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--brown);
+    padding: 88px 52px 80px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 72px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '5';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 680px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.03);
+    position: absolute;
+    top: -120px;
+    left: -40px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .hero-left { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 22px;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(44px, 6vw, 80px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(245,240,232,0.78);
+    line-height: 1.8;
+    max-width: 500px;
+    margin-bottom: 36px;
+  }
+
+  /* Trust signals */
+  .trust-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .trust-pill {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.6);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .trust-pill::before {
+    content: '✓';
+    color: var(--sage);
+    font-size: 13px;
+  }
+
+  /* ── OPT-IN CARD ── */
+  .optin-card {
+    background: var(--warm-white);
+    padding: 44px 40px;
+    border-top: 4px solid var(--terracotta);
+    position: relative;
+    z-index: 1;
+  }
+
+  .optin-card-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 14px;
+  }
+
+  .optin-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.25;
+    margin-bottom: 24px;
+  }
+
+  .optin-card h2 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-group label {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+    margin-bottom: 7px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid rgba(61,43,31,0.2);
+    background: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--brown);
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus {
+    border-color: var(--terracotta);
+  }
+
+  .form-group input::placeholder {
+    color: rgba(61,43,31,0.3);
+  }
+
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 18px 24px;
+    background: var(--terracotta);
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover { background: var(--deep-terracotta); }
+
+  .form-note {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(61,43,31,0.4);
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* ── WHAT YOU GET ── */
+  .what-section {
+    padding: 80px 52px;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 14px;
+  }
+
+  .what-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.15;
+    margin-bottom: 48px;
+    max-width: 580px;
+  }
+
+  .what-section h2 em { font-style: italic; color: var(--terracotta); }
+
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
+  }
+
+  .day-tile {
+    background: var(--cream);
+    padding: 28px 22px;
+    border-top: 3px solid var(--terracotta);
+  }
+
+  .day-tile:nth-child(2) { border-top-color: var(--sage); }
+  .day-tile:nth-child(3) { border-top-color: var(--gold); }
+  .day-tile:nth-child(4) { border-top-color: var(--terracotta); }
+  .day-tile:nth-child(5) { border-top-color: var(--sage); }
+
+  .day-tile-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: rgba(61,43,31,0.55);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .day-tile-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 8px;
+  }
+
+  .day-tile:nth-child(2) .day-tile-label { color: var(--sage); }
+  .day-tile:nth-child(3) .day-tile-label { color: #8a6a20; }
+  .day-tile:nth-child(4) .day-tile-label { color: var(--terracotta); }
+  .day-tile:nth-child(5) .day-tile-label { color: var(--sage); }
+
+  .day-tile h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.25;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .day-tile p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--warm-taupe);
+    line-height: 1.7;
+  }
+
+  /* ── FOR WHO ── */
+  .who-section {
+    padding: 80px 52px;
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .who-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .who-section h2 em { font-style: italic; color: var(--terracotta); }
+
+  .who-section p {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+
+  .who-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .who-list li {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--brown);
+    line-height: 1.6;
+    padding-left: 24px;
+    position: relative;
+  }
+
+  .who-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--terracotta);
+    font-size: 14px;
+  }
+
+  /* Condition boxes */
+  .condition-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .condition-box {
+    background: var(--warm-white);
+    padding: 28px 26px;
+  }
+
+  .condition-box:first-child { border-top: 3px solid var(--terracotta); }
+  .condition-box:last-child  { border-top: 3px solid var(--sage); }
+
+  .condition-box .cb-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 8px;
+  }
+
+  .condition-box:last-child .cb-label { color: var(--sage); }
+
+  .condition-box .cb-def {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--brown);
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .condition-box p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--warm-taupe);
+    line-height: 1.75;
+  }
+
+  /* ── DR ALLI ── */
+  .alli-section {
+    background: var(--brown);
+    padding: 80px 52px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .alli-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.55;
+    padding-left: 28px;
+    border-left: 3px solid var(--terracotta);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .alli-attribution {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    padding-left: 28px;
+  }
+
+  .alli-bio {
+    border-top: 2px solid var(--terracotta);
+    padding-top: 28px;
+  }
+
+  .alli-bio .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  .alli-bio .cred {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .alli-bio p {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(245,240,232,0.78);
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+
+  /* ── BOTTOM CTA ── */
+  .bottom-cta {
+    background: var(--cream);
+    padding: 88px 52px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+  }
+
+  .bottom-cta .section-label { text-align: center; }
+
+  .bottom-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 300;
+    color: var(--brown);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .bottom-cta h2 em { font-style: italic; color: var(--terracotta); }
+
+  .bottom-cta p {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--warm-taupe);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 40px;
+  }
+
+  .bottom-form {
+    display: flex;
+    gap: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .bottom-form input {
+    flex: 1;
+    min-width: 180px;
+    padding: 16px 18px;
+    border: 1.5px solid rgba(61,43,31,0.22);
+    background: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    color: var(--brown);
+    outline: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .bottom-form input:focus { border-color: var(--terracotta); }
+  .bottom-form input::placeholder { color: rgba(61,43,31,0.3); }
+
+  .bottom-form button {
+    padding: 16px 28px;
+    background: var(--terracotta);
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .bottom-form button:hover { background: var(--deep-terracotta); }
+
+  .bottom-note {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(61,43,31,0.38);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brown);
+    padding: 28px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  footer p {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: rgba(245,240,232,0.35);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 780px) {
+    .logo-bar { padding: 14px 24px; }
+    .logo-bar-right { display: none; }
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 56px 28px 48px;
+      gap: 40px;
+    }
+    .optin-card { padding: 32px 28px; }
+    .what-section { padding: 56px 28px; }
+    .days-grid { grid-template-columns: 1fr 1fr; }
+    .days-grid .day-tile:last-child { grid-column: span 2; }
+    .who-section { grid-template-columns: 1fr; padding: 56px 28px; gap: 44px; }
+    .alli-section { grid-template-columns: 1fr; padding: 56px 28px; gap: 44px; }
+    .bottom-cta { padding: 64px 28px; }
+    .bottom-form { flex-direction: column; }
+    .bottom-form input, .bottom-form button { width: 100%; }
+    footer { padding: 24px 28px; flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── LOGO BAR ── -->
+<div class="logo-bar">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="280" height="86">
+    <defs><style>.lp-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.lp-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.lp-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+    <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+      <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+      <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+      <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+      <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <line x1="175" y1="64" x2="500" y2="64" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+    <text x="178" y="58" class="lp-bn">Natural Movement</text>
+    <text x="180" y="80" class="lp-sn">MECHANICS</text>
+    <text x="180" y="103" class="lp-tl">rooted in science · free in movement</text>
+  </svg>
+  <div class="logo-bar-right">Free Guide · Pelvic Health Education</div>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Free Guide · Stress Incontinence &amp; Prolapse</div>
+    <h1>5-Day Pelvic Floor<br><em>Confidence</em><br>Challenge</h1>
+    <p class="hero-sub">Five days. Five practices. A whole new relationship with the body part everyone told you not to talk about.</p>
+    <div class="trust-row">
+      <span class="trust-pill">Free to download</span>
+      <span class="trust-pill">No spam, ever</span>
+      <span class="trust-pill">PT-designed</span>
+    </div>
+  </div>
+
+  <!-- OPT-IN CARD -->
+  <div class="optin-card">
+    <div class="optin-card-label">Get instant access</div>
+    <h2>Your free guide is<br><em>waiting for you.</em></h2>
+
+    <!-- Replace action with your Kit form URL -->
+    <form action="YOUR_KIT_FORM_ACTION_URL" method="post">
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="fields[first_name]" placeholder="Your first name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email_address" placeholder="your@email.com" required>
+      </div>
+      <button type="submit" class="submit-btn">Send me the free guide →</button>
+      <p class="form-note">No spam. No judgment. Unsubscribe anytime.<br>Your information is never shared or sold.</p>
+    </form>
+  </div>
+</div>
+
+<!-- ── WHAT YOU GET ── -->
+<div class="what-section">
+  <div class="section-label">What's inside</div>
+  <h2>Five days of PT-designed practices — <em>focused where it matters.</em></h2>
+  <div class="days-grid">
+    <div class="day-tile">
+      <div class="day-tile-num">1</div>
+      <div class="day-tile-label">Awareness</div>
+      <h3>Find Your Floor</h3>
+      <p>Learn what a correct pelvic floor contraction actually feels like — and why most people have been doing it wrong.</p>
+    </div>
+    <div class="day-tile">
+      <div class="day-tile-num">2</div>
+      <div class="day-tile-label">Education</div>
+      <h3>Reframe Everything</h3>
+      <p>Hip circles, bridging, and the anti-gravity exercises that reduce load on your pelvic organs while building real strength.</p>
+    </div>
+    <div class="day-tile">
+      <div class="day-tile-num">3</div>
+      <div class="day-tile-label">Technique</div>
+      <h3>The Knack</h3>
+      <p>The single technique that stops leakage before it starts. Learn it seated, take it standing, and apply it to real life.</p>
+    </div>
+    <div class="day-tile">
+      <div class="day-tile-num">4</div>
+      <div class="day-tile-label">Integration</div>
+      <h3>Load It Up</h3>
+      <p>Squats, rows, and bird-dogs with breath and pelvic floor working together — the way your body was designed to move.</p>
+    </div>
+    <div class="day-tile">
+      <div class="day-tile-num">5</div>
+      <div class="day-tile-label">Confidence</div>
+      <h3>Take It to Life</h3>
+      <p>Coughing, jumping, laughing on your feet. If you've done the work, Day 5 is your proof that it's working.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHO IT'S FOR ── -->
+<div class="who-section">
+  <div>
+    <div class="section-label">Who this is for</div>
+    <h2>Two common conditions.<br><em>Both very treatable.</em></h2>
+    <p>Pelvic floor dysfunction is not something you manage. It's something you treat. This guide was designed for people living with two of the most common presentations — and who deserve access to real clinical education outside of a clinic.</p>
+    <ul class="who-list">
+      <li>You leak when you cough, sneeze, laugh, or jump</li>
+      <li>You feel heaviness or pressure in your pelvis</li>
+      <li>You've been told this is normal or just part of aging</li>
+      <li>You've never seen a pelvic floor PT — or can't access one</li>
+      <li>You're ready to actually do something about it</li>
+    </ul>
+  </div>
+
+  <div class="condition-boxes">
+    <div class="condition-box">
+      <div class="cb-label">Stress Urinary Incontinence</div>
+      <div class="cb-def">Leaking when pressure increases suddenly.</div>
+      <p>Coughing, sneezing, laughing, jumping. The most common type of incontinence — and one of the most responsive to targeted technique training.</p>
+    </div>
+    <div class="condition-box">
+      <div class="cb-label">Pelvic Organ Prolapse</div>
+      <div class="cb-def">A feeling of heaviness, pressure, or descent.</div>
+      <p>When support structures weaken, symptoms include pelvic pressure and bulging. Graded, supervised rehabilitation is available — and often effective — at every severity level.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── DR. ALLI ── -->
+<div class="alli-section">
+  <div>
+    <div class="alli-quote">"I spent over 20 years watching patients apologize for having a body that needed care. That ends here. Pelvic health is medical. You deserve information that treats it that way."</div>
+    <div class="alli-attribution">— Dr. Alli Gannon, PT, DPT</div>
+  </div>
+  <div class="alli-bio">
+    <div class="name">Dr. Alli Gannon</div>
+    <div class="cred">PT, DPT · 20+ Years Clinical Experience</div>
+    <p>Doctor of Physical Therapy with experience across outpatient orthopedics, pelvic health, acute care, and home health. Trained patients from Okinawa to Virginia. Now bringing that clinical education directly to the people who need it most — without a referral, without a co-pay, and without the shame.</p>
+    <p>Natural Movement Mechanics exists because pelvic health education should not be gated by geography, insurance, or embarrassment.</p>
+  </div>
+</div>
+
+<!-- ── BOTTOM CTA ── -->
+<div class="bottom-cta">
+  <div class="section-label">Ready when you are</div>
+  <h2>Five days to a whole new<br><em>relationship with your body.</em></h2>
+  <p>Download your free guide and start Day 1 today. No equipment. No appointment. No more waiting.</p>
+
+  <!-- Replace action with your Kit form URL -->
+  <form class="bottom-form" action="YOUR_KIT_FORM_ACTION_URL" method="post">
+    <input type="text" name="fields[first_name]" placeholder="First name" required>
+    <input type="email" name="email_address" placeholder="Email address" required>
+    <button type="submit">Get the guide →</button>
+  </form>
+  <p class="bottom-note">Free. No spam. Unsubscribe anytime.</p>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div style="background:var(--cream); padding:10px 14px 7px; border-bottom:2px solid var(--sage); display:inline-block;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="200" height="62">
+      <defs><style>.lpf-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.lpf-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.lpf-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+      <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+        <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+        <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+        <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <line x1="175" y1="64" x2="500" y2="64" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+      <text x="178" y="58" class="lpf-bn">Natural Movement</text>
+      <text x="180" y="80" class="lpf-sn">MECHANICS</text>
+      <text x="180" y="103" class="lpf-tl">rooted in science · free in movement</text>
+    </svg>
+  </div>
+  <p>© Natural Movement Mechanics · Dr. Alli Gannon, PT, DPT<br>naturalmovementmechanics.com · Pelvic health education for everyone.</p>
+</footer>
+
+</body>
+</html>

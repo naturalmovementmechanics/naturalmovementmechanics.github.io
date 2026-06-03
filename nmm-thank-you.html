@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In — Natural Movement Mechanics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracotta: #C4714A;
+    --sage: #7A8C6E;
+    --cream: #F5F0E8;
+    --brown: #3D2B1F;
+    --gold: #C9A96E;
+    --warm-white: #FDFAF5;
+    --deep-terracotta: #9B4E2A;
+    --light-sage: #8a9c7e;
+    --warm-taupe: #6b5a50;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    min-height: 100vh;
+  }
+
+  /* ── LOGO BAR ── */
+  .logo-bar {
+    background: var(--cream);
+    padding: 18px 52px;
+    border-bottom: 2px solid var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-bar-right {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+  }
+
+  /* ── HERO CONFIRMATION ── */
+  .hero {
+    background: var(--brown);
+    padding: 80px 52px 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '✓';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 480px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.03);
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(245,240,232,0.72);
+    line-height: 1.75;
+    max-width: 520px;
+    margin: 20px auto 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── WHAT HAPPENS NEXT ── */
+  .next-section {
+    background: var(--warm-white);
+    padding: 64px 52px;
+    border-bottom: 1px solid rgba(61,43,31,0.1);
+  }
+
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 14px;
+  }
+
+  .next-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.2;
+    margin-bottom: 40px;
+    max-width: 560px;
+  }
+
+  .next-section h2 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    max-width: 860px;
+  }
+
+  .step {
+    background: var(--cream);
+    padding: 32px 28px;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: rgba(61,43,31,0.55);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .step-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+  }
+
+  .step p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.75;
+  }
+
+  .step:nth-child(2) .step-title { color: var(--sage); }
+  .step:nth-child(3) .step-title { color: var(--gold); }
+
+  .step:nth-child(1) { border-top: 3px solid var(--terracotta); }
+  .step:nth-child(2) { border-top: 3px solid var(--sage); }
+  .step:nth-child(3) { border-top: 3px solid var(--gold); }
+
+  /* ── DR ALLI SECTION ── */
+  .alli-section {
+    padding: 64px 52px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .alli-section .quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--brown);
+    line-height: 1.55;
+    padding-left: 24px;
+    border-left: 3px solid var(--terracotta);
+    margin-bottom: 20px;
+  }
+
+  .alli-section .attribution {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+    padding-left: 24px;
+  }
+
+  .alli-card {
+    background: var(--brown);
+    padding: 36px 32px;
+    border-top: 3px solid var(--terracotta);
+  }
+
+  .alli-card .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  .alli-card .cred {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  .alli-card p {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(245,240,232,0.8);
+    line-height: 1.8;
+  }
+
+  /* ── LEAK-FREE TEASER ── */
+  .teaser-section {
+    background: var(--cream);
+    padding: 80px 52px;
+    border-top: 1px solid rgba(61,43,31,0.1);
+    text-align: center;
+  }
+
+  .teaser-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 20px;
+  }
+
+  .teaser-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 300;
+    color: var(--brown);
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+
+  .teaser-section h2 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .teaser-divider {
+    width: 56px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--sage), var(--gold));
+    margin: 28px auto;
+  }
+
+  .teaser-section .body {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--warm-taupe);
+    line-height: 1.85;
+    max-width: 580px;
+    margin: 0 auto 40px;
+  }
+
+  .teaser-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 780px;
+    margin: 0 auto 48px;
+    text-align: left;
+  }
+
+  .teaser-card {
+    background: var(--warm-white);
+    padding: 24px 22px;
+    border-top: 3px solid var(--sage);
+  }
+
+  .teaser-card:nth-child(2) { border-top-color: var(--terracotta); }
+  .teaser-card:nth-child(3) { border-top-color: var(--gold); }
+
+  .teaser-card-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 8px;
+  }
+
+  .teaser-card:nth-child(2) .teaser-card-label { color: var(--terracotta); }
+  .teaser-card:nth-child(3) .teaser-card-label { color: var(--gold); }
+
+  .teaser-card p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.7;
+  }
+
+  .teaser-closing {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--brown);
+    margin-bottom: 6px;
+  }
+
+  .teaser-sig {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brown);
+    padding: 28px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer p {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.07em;
+    color: rgba(245,240,232,0.4);
+  }
+
+  @media (max-width: 680px) {
+    .logo-bar { padding: 14px 24px; }
+    .logo-bar-right { display: none; }
+    .hero { padding: 56px 28px 52px; }
+    .next-section { padding: 48px 28px; }
+    .steps { grid-template-columns: 1fr; }
+    .alli-section { grid-template-columns: 1fr; padding: 48px 28px; gap: 40px; }
+    .teaser-section { padding: 56px 28px; }
+    .teaser-cards { grid-template-columns: 1fr; }
+    footer { padding: 24px 28px; flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── LOGO BAR ── -->
+<div class="logo-bar">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="280" height="86">
+    <defs><style>.ty-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.ty-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.ty-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+    <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+      <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+      <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+      <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+      <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <line x1="175" y1="64" x2="500" y2="64" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+    <text x="178" y="58" class="ty-bn">Natural Movement</text>
+    <text x="180" y="80" class="ty-sn">MECHANICS</text>
+    <text x="180" y="103" class="ty-tl">rooted in science · free in movement</text>
+  </svg>
+  <div class="logo-bar-right">naturalmovementmechanics.com</div>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-eyebrow">You're officially in.</div>
+  <h1>Check your inbox.<br><em>Your guide is on its way.</em></h1>
+  <p class="hero-sub">The 5-Day Pelvic Floor Confidence Challenge is headed to you right now. While you wait — a few things worth knowing.</p>
+</div>
+
+<!-- ── WHAT HAPPENS NEXT ── -->
+<div class="next-section">
+  <div class="section-label">What happens next</div>
+  <h2>Three things to do <em>right now.</em></h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">Check your inbox</div>
+      <p>Your guide is on its way from Dr. Alli at Natural Movement Mechanics. If it doesn't arrive within a few minutes, check your spam or promotions folder and move it to your main inbox so you don't miss anything.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">Start on Day 1</div>
+      <p>Don't skip ahead. Each day builds on the last. Day 1 is about finding your pelvic floor — and if you've been doing kegels wrong (most people are), that alone is worth the five minutes.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">Be on the lookout</div>
+      <p>More clinical education is coming your way from Natural Movement Mechanics — all of it written and recorded by a Doctor of Physical Therapy. This guide is just the beginning.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── DR. ALLI ── -->
+<div class="alli-section">
+  <div>
+    <div class="quote">"I spent over 20 years watching patients apologize for having a body that needed care. This guide exists because you shouldn't have to wait for a referral to feel better informed."</div>
+    <div class="attribution">— Dr. Alli, PT, DPT</div>
+  </div>
+  <div class="alli-card">
+    <div class="name">Dr. Alli Gannon</div>
+    <div class="cred">PT, DPT · 20+ Years Clinical Experience</div>
+    <p>Specializing in pelvic health, orthopedics, and the overlap between the two. Practiced across outpatient, acute care, home health, and now — bringing clinical education directly to the people who need it most.</p>
+  </div>
+</div>
+
+<!-- ── LEAK-FREE TEASER ── -->
+<div class="teaser-section">
+  <div class="teaser-eyebrow">Coming Soon from Natural Movement Mechanics</div>
+  <h2>The guide got you started.<br><em>The course takes you all the way.</em></h2>
+  <div class="teaser-divider"></div>
+  <p class="body">The 5-Day Challenge introduces you to your pelvic floor. The <strong>Leak-Free</strong> course is where the full clinical education lives — every type of incontinence, the mobility work, the progressions, and the real-life application. Taught on video by Dr. Alli. No gym required. No referral needed.</p>
+  <div class="teaser-cards">
+    <div class="teaser-card">
+      <div class="teaser-card-label">Every type of incontinence</div>
+      <p>Stress, urgency, mixed, and everything in between — explained clinically, treated practically.</p>
+    </div>
+    <div class="teaser-card">
+      <div class="teaser-card-label">Video-led exercise progressions</div>
+      <p>Not stick figures this time. Real demonstrations, real coaching cues, real results.</p>
+    </div>
+    <div class="teaser-card">
+      <div class="teaser-card-label">The full functional arc</div>
+      <p>Supine → seated → standing → loaded → impact. The same progression used in clinical PT.</p>
+    </div>
+  </div>
+  <p class="teaser-closing">Be on the lookout. 🌿</p>
+  <p class="teaser-sig">Natural Movement Mechanics · Dr. Alli, PT, DPT</p>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div style="background:var(--cream); padding:12px 16px 8px; border-bottom:2px solid var(--sage); display:inline-block;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="240" height="74">
+      <defs><style>.tyf-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.tyf-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.tyf-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+      <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+        <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+        <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+        <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+        <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+        <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <line x1="175" y1="64" x2="500" y2="64" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+      <text x="178" y="58" class="tyf-bn">Natural Movement</text>
+      <text x="180" y="80" class="tyf-sn">MECHANICS</text>
+      <text x="180" y="103" class="tyf-tl">rooted in science · free in movement</text>
+    </svg>
+  </div>
+  <p>© Natural Movement Mechanics · Dr. Alli Gannon, PT, DPT<br>You're receiving this because you opted in at naturalmovementmechanics.com</p>
+</footer>
+
+</body>
+</html>

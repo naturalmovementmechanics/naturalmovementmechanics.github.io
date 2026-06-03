@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pelvic Health Intake Handout | Natural Movement Mechanics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracotta: #C4714A;
+    --sage: #7A8C6E;
+    --cream: #F5F0E8;
+    --brown: #3D2B1F;
+    --gold: #C9A96E;
+    --warm-white: #FDFAF5;
+    --deep-terracotta: #9B4E2A;
+    --light-sage: #8a9c7e;
+    --warm-taupe: #6b5a50;
+    --rule: rgba(61,43,31,0.12);
+    --rule-med: rgba(61,43,31,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ════ LOGO BAR ════ */
+  .logo-bar {
+    background: var(--cream);
+    padding: 16px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--sage);
+  }
+
+  .logo-bar-right {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-taupe);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* ════ COVER STRIP ════ */
+  .cover-strip {
+    background: var(--brown);
+    padding: 40px 44px 36px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: end;
+  }
+
+  .cover-strip h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .cover-strip h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .cover-strip .subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.55);
+  }
+
+  .cover-strip-right {
+    text-align: right;
+  }
+
+  .cover-strip-right .for-pt {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 6px;
+  }
+
+  .cover-strip-right .pt-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(245,240,232,0.7);
+    line-height: 1.4;
+  }
+
+  /* ════ PATIENT INFO BAR ════ */
+  .patient-bar {
+    background: var(--sage);
+    padding: 18px 44px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: end;
+  }
+
+  .patient-field label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(253,250,245,0.88);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .patient-field .field-line {
+    border-bottom: 1px solid rgba(253,250,245,0.4);
+    height: 22px;
+    width: 100%;
+  }
+
+  /* ════ HOW TO USE ════ */
+  .how-bar {
+    background: rgba(122,140,110,0.1);
+    border-bottom: 1px solid var(--rule);
+    padding: 16px 44px;
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .how-bar-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+
+  .how-bar p {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--brown);
+    line-height: 1.7;
+  }
+
+  /* ════ SECTION HEADERS ════ */
+  .section-head {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    align-items: stretch;
+    margin-bottom: 0;
+  }
+
+  .section-num {
+    background: var(--terracotta);
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .section-head:nth-child(4n+1) .section-num { background: var(--terracotta); }
+  .section-head:nth-child(4n+2) .section-num { background: var(--sage); }
+  .section-head:nth-child(4n+3) .section-num { background: var(--gold); }
+  .section-head:nth-child(4n+4) .section-num { background: var(--brown); }
+
+  .section-title-block {
+    background: var(--brown);
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-domain {
+    font-family: 'Jost', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--cream);
+    font-style: italic;
+    line-height: 1.15;
+  }
+
+  .section-source {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.6);
+    margin-top: 4px;
+  }
+
+  /* ════ QUESTION BLOCKS ════ */
+  .section-body {
+    background: var(--warm-white);
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Alternating section tints for visual rhythm */
+  .section-body.tint-terracotta { background: #FDF7F3; border-left: 4px solid var(--terracotta); }
+  .section-body.tint-sage       { background: #F5F8F4; border-left: 4px solid var(--sage); }
+  .section-body.tint-gold       { background: #FDF9F1; border-left: 4px solid var(--gold); }
+  .section-body.tint-brown      { background: #FAF6F3; border-left: 4px solid var(--brown); }
+
+  .q-row {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(61,43,31,0.1);
+    align-items: start;
+  }
+
+  .q-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .q-row:first-child { padding-top: 0; }
+
+  .q-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--terracotta);
+    padding-top: 1px;
+    line-height: 1.3;
+  }
+
+  .q-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brown);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .q-source {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--sage);
+    letter-spacing: 0.06em;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
+  /* Response types */
+  .resp-scale {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
+
+  .scale-opt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 36px;
+  }
+
+  .scale-box {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid rgba(61,43,31,0.25);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--brown);
+    border-radius: 2px;
+  }
+
+  .scale-lbl {
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--warm-taupe);
+    text-align: center;
+    line-height: 1.3;
+    max-width: 44px;
+  }
+
+  .resp-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 2px;
+  }
+
+  .chip {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--brown);
+    border: 1.5px solid rgba(61,43,31,0.25);
+    padding: 6px 13px;
+    background: #fff;
+    white-space: nowrap;
+    cursor: default;
+    border-radius: 2px;
+  }
+
+  .resp-yn {
+    display: flex;
+    gap: 10px;
+    margin-top: 2px;
+  }
+
+  .yn-opt {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brown);
+  }
+
+  .yn-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(61,43,31,0.3);
+    background: #fff;
+    flex-shrink: 0;
+  }
+
+  .write-line {
+    border-bottom: 2px solid rgba(61,43,31,0.2);
+    height: 28px;
+    margin-top: 6px;
+    width: 100%;
+  }
+
+  .write-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--sage);
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  .section-gap { height: 3px; background: var(--cream); }
+
+  /* ════ PT SUMMARY PAGE ════ */
+  .summary-page {
+    margin-top: 3px;
+    background: var(--brown);
+    padding: 32px 44px;
+  }
+
+  .summary-page-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .summary-page h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 300;
+    color: var(--cream);
+    font-style: italic;
+    margin-bottom: 20px;
+    max-width: 560px;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-bottom: 24px;
+  }
+
+  .summary-cell {
+    background: rgba(245,240,232,0.05);
+    padding: 14px 16px;
+    border-top: 2px solid rgba(245,240,232,0.1);
+  }
+
+  .summary-cell.t { border-top-color: var(--terracotta); }
+  .summary-cell.s { border-top-color: var(--sage); }
+  .summary-cell.g { border-top-color: var(--gold); }
+  .summary-cell.b { border-top-color: rgba(245,240,232,0.25); }
+
+  .summary-cell-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.45);
+    margin-bottom: 6px;
+  }
+
+  .summary-cell-line {
+    border-bottom: 1px solid rgba(245,240,232,0.15);
+    height: 22px;
+  }
+
+  .impact-table {
+    background: rgba(245,240,232,0.04);
+    border: 1px solid rgba(245,240,232,0.1);
+  }
+
+  .impact-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 80px 80px;
+    border-bottom: 1px solid rgba(245,240,232,0.08);
+    padding: 8px 16px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .impact-row:last-child { border-bottom: none; }
+
+  .impact-row.header {
+    background: rgba(245,240,232,0.06);
+  }
+
+  .impact-row.header span {
+    font-family: 'Jost', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    text-align: center;
+  }
+
+  .impact-row.header span:first-child { text-align: left; }
+
+  .domain-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  .impact-box {
+    border: 1px solid rgba(245,240,232,0.15);
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .impact-dot-row {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+  }
+
+  .impact-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(245,240,232,0.2);
+  }
+
+  .goal-box {
+    background: rgba(196,113,74,0.12);
+    border: 1px solid rgba(196,113,74,0.25);
+    border-left: 3px solid var(--terracotta);
+    padding: 16px 18px;
+    margin-top: 20px;
+  }
+
+  .goal-box-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 8px;
+  }
+
+  .goal-write-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .goal-write-line {
+    border-bottom: 1px solid rgba(196,113,74,0.3);
+    height: 22px;
+  }
+
+  /* ════ REFERENCES ════ */
+  .references {
+    background: rgba(122,140,110,0.07);
+    border-top: 3px solid var(--sage);
+    padding: 24px 44px;
+    margin-top: 3px;
+  }
+
+  .references-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 14px;
+  }
+
+  .ref-item {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--warm-taupe);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .ref-item::before {
+    content: attr(data-num);
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: var(--sage);
+  }
+
+  /* ════ DISCLAIMER + FOOTER ════ */
+  .disclaimer {
+    padding: 14px 44px;
+    border-top: 1px solid var(--rule);
+    background: var(--cream);
+  }
+
+  .disclaimer p {
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(61,43,31,0.5);
+    line-height: 1.65;
+  }
+
+  footer {
+    background: var(--brown);
+    padding: 22px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer p {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.3);
+  }
+
+  @media (max-width: 640px) {
+    .logo-bar { padding: 12px 20px; }
+    .logo-bar svg { width: 200px !important; height: 62px !important; }
+    .logo-bar-right { display: none; }
+    .cover-strip { grid-template-columns: 1fr; padding: 28px 22px; gap: 16px; }
+    .patient-bar { grid-template-columns: 1fr 1fr; padding: 16px 22px; }
+    .how-bar { padding: 14px 22px; flex-direction: column; gap: 8px; }
+    .section-body { padding: 16px 18px; }
+    .summary-grid { grid-template-columns: 1fr 1fr; }
+    .impact-row { grid-template-columns: 1fr 60px 60px 60px; }
+    .summary-page { padding: 24px 22px; }
+    .references { padding: 20px 22px; }
+    .disclaimer { padding: 12px 22px; }
+    footer { padding: 18px 22px; flex-direction: column; }
+  }
+
+  @media print {
+    body { background: white; font-size: 12px; }
+    .section-gap { height: 2px; }
+    .logo-bar, .cover-strip, .patient-bar, .summary-page {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-body.tint-terracotta,
+    .section-body.tint-sage,
+    .section-body.tint-gold,
+    .section-body.tint-brown {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ LOGO BAR ══ -->
+<div class="logo-bar">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="320" height="98">
+    <defs><style>.lb-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.lb-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.lb-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+    <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+      <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+      <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+      <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+      <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+      <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+      <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+      <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+      <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <line x1="175" y1="64" x2="500" y2="64" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+    <text x="178" y="58" class="lb-bn">Natural Movement</text>
+    <text x="180" y="80" class="lb-sn">MECHANICS</text>
+    <text x="180" y="103" class="lb-tl">rooted in science · free in movement</text>
+  </svg>
+  <div class="logo-bar-right">
+    Pelvic Health Intake Handout<br>
+    naturalmovementmechanics.com
+  </div>
+</div>
+
+<!-- ══ COVER STRIP ══ -->
+<div class="cover-strip">
+  <div>
+    <h1>Pelvic Health<br><em>Intake Handout</em></h1>
+    <p class="subtitle">Bring this completed form to your first pelvic floor PT appointment</p>
+  </div>
+  <div class="cover-strip-right">
+    <div class="for-pt">For use with your clinician</div>
+    <div class="pt-label">Questions informed by<br>validated clinical tools<br>ICIQ-UI SF · PFDI-20<br>PFIQ-7 · PISQ-12</div>
+  </div>
+</div>
+
+<!-- ══ PATIENT INFO ══ -->
+<div class="patient-bar">
+  <div class="patient-field">
+    <label>Patient Name</label>
+    <div class="field-line"></div>
+  </div>
+  <div class="patient-field">
+    <label>Date of Birth</label>
+    <div class="field-line"></div>
+  </div>
+  <div class="patient-field">
+    <label>Date Completed</label>
+    <div class="field-line"></div>
+  </div>
+  <div class="patient-field">
+    <label>Primary Concern</label>
+    <div class="field-line"></div>
+  </div>
+</div>
+
+<!-- ══ HOW TO USE ══ -->
+<div class="how-bar">
+  <span class="how-bar-label">Instructions</span>
+  <p>Complete this form honestly before your appointment and bring it with you. Each section covers one domain of pelvic health. Your responses will help your clinician understand your full symptom picture quickly and efficiently — saving time in the appointment for assessment and treatment. There are no wrong answers. Underreporting is the most common barrier to effective pelvic health care.</p>
+</div>
+
+<!-- ════════════════════════════════
+     SECTION 1 — BLADDER PATTERNS
+════════════════════════════════ -->
+<div class="section-gap"></div>
+<div class="section-head">
+  <div class="section-num" style="background:var(--terracotta);">1</div>
+  <div class="section-title-block">
+    <div class="section-domain">Bladder Function</div>
+    <div class="section-title">Bladder Patterns &amp; Urgency</div>
+    <div class="section-source">Informed by: ICIQ-UI SF (Avery et al., 2004) · PFDI-20/UDI-6 (Barber et al., 2005)</div>
+  </div>
+</div>
+<div class="section-body tint-terracotta">
+
+  <div class="q-row">
+    <div class="q-num">1</div>
+    <div>
+      <div class="q-text">How often do you leak urine?</div>
+      <div class="q-source">Adapted from ICIQ-UI SF Q1</div>
+      <div class="resp-chips">
+        <div class="chip">Never</div>
+        <div class="chip">About once a week or less</div>
+        <div class="chip">Two or three times a week</div>
+        <div class="chip">About once a day</div>
+        <div class="chip">Several times a day</div>
+        <div class="chip">All the time</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">2</div>
+    <div>
+      <div class="q-text">How much urine do you usually leak?</div>
+      <div class="q-source">Adapted from ICIQ-UI SF Q2</div>
+      <div class="resp-chips">
+        <div class="chip">None</div>
+        <div class="chip">A small amount</div>
+        <div class="chip">A moderate amount</div>
+        <div class="chip">A large amount</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">3</div>
+    <div>
+      <div class="q-text">Overall, how much does leaking urine interfere with your everyday life? Rate 0 (not at all) to 10 (a great deal)</div>
+      <div class="q-source">Adapted from ICIQ-UI SF Q3</div>
+      <div class="resp-scale">
+        <div class="scale-opt"><div class="scale-box">0</div><div class="scale-lbl">Not at all</div></div>
+        <div class="scale-opt"><div class="scale-box">1</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">2</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">3</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">4</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">5</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">6</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">7</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">8</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">9</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">10</div><div class="scale-lbl">A great deal</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">4</div>
+    <div>
+      <div class="q-text">When does leakage occur? Check all that apply.</div>
+      <div class="q-source">Adapted from ICIQ-UI SF Q4 (perceived cause)</div>
+      <div class="resp-chips">
+        <div class="chip">Before I reach the toilet</div>
+        <div class="chip">When I cough or sneeze</div>
+        <div class="chip">When I am asleep</div>
+        <div class="chip">When I am physically active</div>
+        <div class="chip">When I have finished urinating</div>
+        <div class="chip">For no obvious reason</div>
+        <div class="chip">All the time</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">5</div>
+    <div>
+      <div class="q-text">Do you feel a strong, sudden urge to urinate that is difficult to defer?</div>
+      <div class="q-source">Adapted from PFDI-20/UDI-6</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">6</div>
+    <div>
+      <div class="q-text">How many times do you typically urinate during the day? At night?</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px;">
+        <div>
+          <div class="write-label">Times per day</div>
+          <div class="write-line"></div>
+        </div>
+        <div>
+          <div class="write-label">Times at night (nocturia)</div>
+          <div class="write-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ SECTION 2 — PROLAPSE ════ -->
+<div class="section-gap"></div>
+<div class="section-head">
+  <div class="section-num" style="background:var(--sage);">2</div>
+  <div class="section-title-block">
+    <div class="section-domain">Pelvic Organ Support</div>
+    <div class="section-title">Prolapse Symptoms</div>
+    <div class="section-source">Informed by: PFDI-20/POPDI-6 (Barber et al., 2005)</div>
+  </div>
+</div>
+<div class="section-body tint-sage">
+
+  <div class="q-row">
+    <div class="q-num">1</div>
+    <div>
+      <div class="q-text">Do you usually have a sensation of bulging or protrusion from your vaginal area?</div>
+      <div class="q-source">PFDI-20/POPDI-6 Q1</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">2</div>
+    <div>
+      <div class="q-text">Do you usually have a feeling of incomplete bladder emptying?</div>
+      <div class="q-source">PFDI-20/POPDI-6 Q2</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">3</div>
+    <div>
+      <div class="q-text">Do you usually have to push on the vaginal wall, perineum, or around your rectum to have or complete a bowel movement?</div>
+      <div class="q-source">PFDI-20/POPDI-6 Q3</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">4</div>
+    <div>
+      <div class="q-text">Do you usually have a feeling of heaviness or pressure in your pelvic region?</div>
+      <div class="q-source">PFDI-20/POPDI-6 Q5</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">5</div>
+    <div>
+      <div class="q-text">Do you have symptoms that are worse at the end of the day or with prolonged standing?</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div class="resp-yn">
+        <div class="yn-opt"><div class="yn-circle"></div> Yes</div>
+        <div class="yn-opt"><div class="yn-circle"></div> No</div>
+        <div class="yn-opt"><div class="yn-circle"></div> Sometimes</div>
+        <div class="yn-opt"><div class="yn-circle"></div> Not applicable</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ SECTION 3 — BOWEL ════ -->
+<div class="section-gap"></div>
+<div class="section-head">
+  <div class="section-num" style="background:var(--gold);">3</div>
+  <div class="section-title-block">
+    <div class="section-domain">Colorectal-Anal Function</div>
+    <div class="section-title">Bowel Health</div>
+    <div class="section-source">Informed by: PFDI-20/CRADI-8 (Barber et al., 2005)</div>
+  </div>
+</div>
+<div class="section-body tint-gold">
+
+  <div class="q-row">
+    <div class="q-num">1</div>
+    <div>
+      <div class="q-text">Do you feel you need to strain hard to have a bowel movement?</div>
+      <div class="q-source">PFDI-20/CRADI-8 Q1</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">2</div>
+    <div>
+      <div class="q-text">Do you feel you have not completely emptied your bowels at the end of a bowel movement?</div>
+      <div class="q-source">PFDI-20/CRADI-8 Q2</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">3</div>
+    <div>
+      <div class="q-text">Do you usually have pain when you pass stool?</div>
+      <div class="q-source">PFDI-20/CRADI-8 Q4</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">4</div>
+    <div>
+      <div class="q-text">Do you have urgency with bowel movements — a sudden urge that is difficult to defer?</div>
+      <div class="q-source">PFDI-20/CRADI-8 Q5</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">5</div>
+    <div>
+      <div class="q-text">Do you have any accidental bowel leakage (including gas, liquid, or solid stool)?</div>
+      <div class="q-source">PFDI-20/CRADI-8 Q7</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Gas only</div>
+        <div class="chip">Liquid stool</div>
+        <div class="chip">Solid stool</div>
+        <div class="chip">All types</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">6</div>
+    <div>
+      <div class="q-text">How often do you have a bowel movement?</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div class="resp-chips">
+        <div class="chip">Multiple times daily</div>
+        <div class="chip">Once daily</div>
+        <div class="chip">Every 2–3 days</div>
+        <div class="chip">Every 4+ days</div>
+        <div class="chip">Varies widely</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ SECTION 4 — PELVIC PAIN ════ -->
+<div class="section-gap"></div>
+<div class="section-head">
+  <div class="section-num" style="background:var(--brown);">4</div>
+  <div class="section-title-block">
+    <div class="section-domain">Pain Assessment</div>
+    <div class="section-title">Pelvic Pain &amp; Discomfort</div>
+    <div class="section-source">Informed by: NRS Pain Scale · PFDI-20/POPDI-6 · Clinical standard intake</div>
+  </div>
+</div>
+<div class="section-body tint-brown">
+
+  <div class="q-row">
+    <div class="q-num">1</div>
+    <div>
+      <div class="q-text">Do you experience pain, pressure, or discomfort in your pelvic region?</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div class="resp-yn">
+        <div class="yn-opt"><div class="yn-circle"></div> Yes</div>
+        <div class="yn-opt"><div class="yn-circle"></div> No</div>
+        <div class="yn-opt"><div class="yn-circle"></div> Sometimes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">2</div>
+    <div>
+      <div class="q-text">Rate your average pelvic pain or discomfort over the past week (0 = none, 10 = worst imaginable)</div>
+      <div class="q-source">Numeric Rating Scale (NRS) — Farrar et al., 2001</div>
+      <div class="resp-scale">
+        <div class="scale-opt"><div class="scale-box">0</div><div class="scale-lbl">None</div></div>
+        <div class="scale-opt"><div class="scale-box">1</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">2</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">3</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">4</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">5</div><div class="scale-lbl">Moderate</div></div>
+        <div class="scale-opt"><div class="scale-box">6</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">7</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">8</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">9</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">10</div><div class="scale-lbl">Worst</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">3</div>
+    <div>
+      <div class="q-text">Where is the pain located? Check all that apply.</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div class="resp-chips">
+        <div class="chip">Lower abdomen</div>
+        <div class="chip">Tailbone / coccyx</div>
+        <div class="chip">Perineum</div>
+        <div class="chip">Vaginal / vulvar</div>
+        <div class="chip">Rectal</div>
+        <div class="chip">Inner thighs</div>
+        <div class="chip">Low back</div>
+        <div class="chip">Hip / SI joint</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">4</div>
+    <div>
+      <div class="q-text">When does pain occur? Check all that apply.</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div class="resp-chips">
+        <div class="chip">At rest</div>
+        <div class="chip">With sitting</div>
+        <div class="chip">With urination</div>
+        <div class="chip">With bowel movement</div>
+        <div class="chip">With intercourse</div>
+        <div class="chip">After intercourse</div>
+        <div class="chip">With exercise</div>
+        <div class="chip">With prolonged standing</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">5</div>
+    <div>
+      <div class="q-text">How long have you been experiencing this pain or discomfort?</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div class="resp-chips">
+        <div class="chip">Less than 3 months</div>
+        <div class="chip">3–6 months</div>
+        <div class="chip">6–12 months</div>
+        <div class="chip">1–5 years</div>
+        <div class="chip">More than 5 years</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ SECTION 5 — MOVEMENT ════ -->
+<div class="section-gap"></div>
+<div class="section-head">
+  <div class="section-num" style="background:var(--terracotta);">5</div>
+  <div class="section-title-block">
+    <div class="section-domain">Functional Activity</div>
+    <div class="section-title">Movement &amp; Exercise</div>
+    <div class="section-source">Informed by: PFIQ-7 (Barber et al., 2005) · Clinical standard intake</div>
+  </div>
+</div>
+<div class="section-body tint-terracotta">
+
+  <div class="q-row">
+    <div class="q-num">1</div>
+    <div>
+      <div class="q-text">Do bladder, bowel, or pelvic symptoms affect your ability to do household chores?</div>
+      <div class="q-source">PFIQ-7 Q1 (UIQ-7 / POPIQ-7 / CRAIQ-7)</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">2</div>
+    <div>
+      <div class="q-text">Do bladder, bowel, or pelvic symptoms affect your ability to do physical activities such as walking, swimming, or exercise?</div>
+      <div class="q-source">PFIQ-7 Q2</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">3</div>
+    <div>
+      <div class="q-text">Which activities cause or worsen your symptoms? Check all that apply.</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div class="resp-chips">
+        <div class="chip">Running</div>
+        <div class="chip">Jumping</div>
+        <div class="chip">Lifting</div>
+        <div class="chip">Squats / lunges</div>
+        <div class="chip">High-impact classes</div>
+        <div class="chip">Walking (extended)</div>
+        <div class="chip">Stairs</div>
+        <div class="chip">Standing from a chair</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">4</div>
+    <div>
+      <div class="q-text">Have you reduced or stopped activities because of pelvic symptoms?</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div class="resp-yn">
+        <div class="yn-opt"><div class="yn-circle"></div> Yes</div>
+        <div class="yn-opt"><div class="yn-circle"></div> No</div>
+      </div>
+      <div class="write-label" style="margin-top:8px;">If yes — what activity and when did you stop?</div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">5</div>
+    <div>
+      <div class="q-text">Do you notice pelvic heaviness, pressure, or bulging during or after exercise?</div>
+      <div class="q-source">Clinical standard intake — prolapse symptom screening</div>
+      <div class="resp-yn">
+        <div class="yn-opt"><div class="yn-circle"></div> Yes</div>
+        <div class="yn-opt"><div class="yn-circle"></div> No</div>
+        <div class="yn-opt"><div class="yn-circle"></div> Sometimes</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ SECTION 6 — SEXUAL HEALTH ════ -->
+<div class="section-gap"></div>
+<div class="section-head">
+  <div class="section-num" style="background:var(--sage);">6</div>
+  <div class="section-title-block">
+    <div class="section-domain">Sexual &amp; Intimate Function</div>
+    <div class="section-title">Intimacy &amp; Sexual Health</div>
+    <div class="section-source">Informed by: PISQ-12 (Rogers et al., 2001) · Clinical standard intake</div>
+  </div>
+</div>
+<div class="section-body tint-sage">
+
+  <div class="q-row">
+    <div class="q-num">1</div>
+    <div>
+      <div class="q-text">How often do you have pain during sexual intercourse?</div>
+      <div class="q-source">Adapted from PISQ-12 Q4</div>
+      <div class="resp-chips">
+        <div class="chip">Always</div>
+        <div class="chip">Usually</div>
+        <div class="chip">Sometimes</div>
+        <div class="chip">Seldom</div>
+        <div class="chip">Never</div>
+        <div class="chip">Not currently sexually active</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">2</div>
+    <div>
+      <div class="q-text">Do you have difficulty with or avoid penetration due to pain, tightness, or muscle spasm?</div>
+      <div class="q-source">Clinical standard intake — vaginismus / dyspareunia screening</div>
+      <div class="resp-yn">
+        <div class="yn-opt"><div class="yn-circle"></div> Yes</div>
+        <div class="yn-opt"><div class="yn-circle"></div> No</div>
+        <div class="yn-opt"><div class="yn-circle"></div> Sometimes</div>
+        <div class="yn-opt"><div class="yn-circle"></div> Prefer not to answer</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">3</div>
+    <div>
+      <div class="q-text">Do you have urinary leakage during sexual activity?</div>
+      <div class="q-source">Adapted from PISQ-12 Q1</div>
+      <div class="resp-chips">
+        <div class="chip">Always</div>
+        <div class="chip">Usually</div>
+        <div class="chip">Sometimes</div>
+        <div class="chip">Seldom</div>
+        <div class="chip">Never</div>
+        <div class="chip">Not applicable</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">4</div>
+    <div>
+      <div class="q-text">Have postpartum changes, hormonal shifts, or gender-affirming care affected your sexual function or comfort?</div>
+      <div class="q-source">Clinical standard intake — inclusive screening</div>
+      <div class="resp-yn">
+        <div class="yn-opt"><div class="yn-circle"></div> Yes</div>
+        <div class="yn-opt"><div class="yn-circle"></div> No</div>
+        <div class="yn-opt"><div class="yn-circle"></div> Not applicable</div>
+      </div>
+      <div class="write-label" style="margin-top:8px;">Please describe if comfortable doing so</div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">5</div>
+    <div>
+      <div class="q-text">How much do pelvic symptoms affect your intimate life overall? (0 = no impact, 10 = severe impact)</div>
+      <div class="q-source">Adapted from PFIQ-7 Q5 / PISQ-12 global item</div>
+      <div class="resp-scale">
+        <div class="scale-opt"><div class="scale-box">0</div><div class="scale-lbl">None</div></div>
+        <div class="scale-opt"><div class="scale-box">1</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">2</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">3</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">4</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">5</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">6</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">7</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">8</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">9</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">10</div><div class="scale-lbl">Severe</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ SECTION 7 — QUALITY OF LIFE ════ -->
+<div class="section-gap"></div>
+<div class="section-head">
+  <div class="section-num" style="background:var(--gold);">7</div>
+  <div class="section-title-block">
+    <div class="section-domain">Quality of Life &amp; Social Impact</div>
+    <div class="section-title">Daily Life &amp; Wellbeing</div>
+    <div class="section-source">Informed by: PFIQ-7 (Barber et al., 2005) · Clinical standard intake</div>
+  </div>
+</div>
+<div class="section-body tint-gold">
+
+  <div class="q-row">
+    <div class="q-num">1</div>
+    <div>
+      <div class="q-text">Do bladder, bowel, or pelvic symptoms affect your social activities — such as visiting friends, going to events, or traveling?</div>
+      <div class="q-source">PFIQ-7 Q3 (UIQ-7 / POPIQ-7 / CRAIQ-7)</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">2</div>
+    <div>
+      <div class="q-text">Do you plan outings, routes, or activities around access to bathrooms?</div>
+      <div class="q-source">Clinical standard intake — avoidance behavior</div>
+      <div class="resp-chips">
+        <div class="chip">Never</div>
+        <div class="chip">Occasionally</div>
+        <div class="chip">Often</div>
+        <div class="chip">It shapes most plans</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">3</div>
+    <div>
+      <div class="q-text">Do bladder, bowel, or pelvic symptoms affect your emotional health — such as causing you to feel depressed, frustrated, or anxious?</div>
+      <div class="q-source">PFIQ-7 Q6 (UIQ-7 / POPIQ-7 / CRAIQ-7)</div>
+      <div class="resp-chips">
+        <div class="chip">Not at all</div>
+        <div class="chip">Somewhat</div>
+        <div class="chip">Moderately</div>
+        <div class="chip">Quite a bit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">4</div>
+    <div>
+      <div class="q-text">Overall, how much do pelvic symptoms interfere with your daily life? (0 = not at all, 10 = severely)</div>
+      <div class="q-source">PFIQ-7 global score / ICIQ-UI SF Q3 analog</div>
+      <div class="resp-scale">
+        <div class="scale-opt"><div class="scale-box">0</div><div class="scale-lbl">Not at all</div></div>
+        <div class="scale-opt"><div class="scale-box">1</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">2</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">3</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">4</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">5</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">6</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">7</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">8</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">9</div><div class="scale-lbl"></div></div>
+        <div class="scale-opt"><div class="scale-box">10</div><div class="scale-lbl">Severely</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">5</div>
+    <div>
+      <div class="q-text">How long have you been managing these symptoms without professional pelvic floor support?</div>
+      <div class="q-source">Clinical standard intake</div>
+      <div class="resp-chips">
+        <div class="chip">Less than 6 months</div>
+        <div class="chip">6 months – 1 year</div>
+        <div class="chip">1–3 years</div>
+        <div class="chip">3–5 years</div>
+        <div class="chip">More than 5 years</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-row">
+    <div class="q-num">6</div>
+    <div>
+      <div class="q-text">What is one specific activity or goal you want to achieve through pelvic floor PT? This is your treatment priority.</div>
+      <div class="q-source">Goal-setting — patient-centered care standard</div>
+      <div class="write-line"></div>
+      <div class="write-line" style="margin-top:12px;"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ FOR THE PT — SUMMARY PAGE ════ -->
+<div class="section-gap"></div>
+<div class="summary-page">
+  <div class="summary-page-label">For the Clinician · Clinical Triage Guide</div>
+  <h2>Patient Summary, Priority Triage &amp; Clinical Action Guide</h2>
+
+  <p style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.9); line-height:1.7; max-width:680px; margin-bottom:24px;">This page is a clinician-facing triage tool based on 20+ years of pelvic floor clinical practice. It is not a validated psychometric scoring system. Use it alongside formal validated measures (see ICIQ-UI SF scoring below) to identify priority domains, guide clinical focus, and set a shared treatment agenda with your patient.</p>
+
+  <!-- TOP INTAKE FIELDS -->
+  <div class="summary-grid" style="margin-bottom:20px;">
+    <div class="summary-cell t">
+      <div class="summary-cell-label">Patient Name</div>
+      <div class="summary-cell-line"></div>
+    </div>
+    <div class="summary-cell s">
+      <div class="summary-cell-label">Date of Assessment</div>
+      <div class="summary-cell-line"></div>
+    </div>
+    <div class="summary-cell g">
+      <div class="summary-cell-label">Symptom Duration</div>
+      <div class="summary-cell-line"></div>
+    </div>
+    <div class="summary-cell b">
+      <div class="summary-cell-label">Prior PT / Treatment</div>
+      <div class="summary-cell-line"></div>
+    </div>
+  </div>
+
+  <!-- ICIQ SCORING BOX -->
+  <div style="background:rgba(196,113,74,0.14); border:1px solid rgba(196,113,74,0.3); border-left:3px solid var(--terracotta); padding:20px 22px; margin-bottom:20px;">
+    <div style="font-family:'Jost',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--terracotta); margin-bottom:12px;">ICIQ-UI SF — Validated Incontinence Score (Section 1, Q1–3 only)</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:14px;">
+      <div>
+        <div style="font-size:13px; font-weight:600; color:rgba(253,250,245,0.92); margin-bottom:6px; letter-spacing:0.04em;">How to score</div>
+        <div style="font-size:13px; font-weight:400; color:rgba(253,250,245,0.88); line-height:1.7;">Q1 (frequency): Never=0 · Less than once/week=1 · Once or twice/week=2 · Three times/week=3 · Once/day=4 · Several/day=5 · All the time=6</div>
+        <div style="font-size:13px; font-weight:400; color:rgba(253,250,245,0.88); line-height:1.7; margin-top:4px;">Q2 (amount): None=0 · Small=2 · Moderate=4 · Large=6</div>
+        <div style="font-size:13px; font-weight:400; color:rgba(253,250,245,0.88); line-height:1.7; margin-top:4px;">Q3 (QoL impact): Patient's 0–10 NRS score</div>
+        <div style="font-size:13px; font-weight:600; color:rgba(253,250,245,0.92); margin-top:8px;">Total = Q1 + Q2 + Q3 (range 0–21)</div>
+      </div>
+      <div>
+        <div style="font-size:13px; font-weight:600; color:rgba(253,250,245,0.92); margin-bottom:8px; letter-spacing:0.04em;">Severity interpretation</div>
+        <div style="display:flex; flex-direction:column; gap:5px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:8px; height:8px; border-radius:50%; background:#7A8C6E; flex-shrink:0;"></div>
+            <span style="font-size:13px; color:rgba(253,250,245,0.9);">1–5 &nbsp;· Slight</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:8px; height:8px; border-radius:50%; background:#C9A96E; flex-shrink:0;"></div>
+            <span style="font-size:13px; color:rgba(253,250,245,0.9);">6–12 · Moderate</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:8px; height:8px; border-radius:50%; background:#C4714A; flex-shrink:0;"></div>
+            <span style="font-size:13px; color:rgba(253,250,245,0.9);">13–18 · Severe</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:8px; height:8px; border-radius:50%; background:#9B4E2A; flex-shrink:0;"></div>
+            <span style="font-size:13px; color:rgba(253,250,245,0.9);">19–21 · Very severe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px; border-top:1px solid rgba(196,113,74,0.25); padding-top:12px;">
+      <div>
+        <div style="font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(196,113,74,0.7); margin-bottom:5px;">Q1 Score</div>
+        <div style="border-bottom:1px solid rgba(253,250,245,0.8); height:22px;"></div>
+      </div>
+      <div>
+        <div style="font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(196,113,74,0.7); margin-bottom:5px;">Q2 Score</div>
+        <div style="border-bottom:1px solid rgba(253,250,245,0.8); height:22px;"></div>
+      </div>
+      <div>
+        <div style="font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(196,113,74,0.7); margin-bottom:5px;">Q3 Score (from patient)</div>
+        <div style="border-bottom:1px solid rgba(253,250,245,0.8); height:22px;"></div>
+      </div>
+    </div>
+    <div style="margin-top:10px; display:flex; align-items:center; gap:16px;">
+      <div style="font-size:13px; font-weight:700; color:rgba(253,250,245,0.8);">ICIQ-UI SF Total (Q1+Q2+Q3) =</div>
+      <div style="border-bottom:1px solid rgba(253,250,245,0.8); width:60px; height:22px;"></div>
+      <div style="font-size:13px; font-weight:400; color:rgba(253,250,245,0.85);">Severity:</div>
+      <div style="border-bottom:1px solid rgba(253,250,245,0.8); width:100px; height:22px;"></div>
+    </div>
+  </div>
+
+  <!-- DOMAIN TRIAGE MATRIX -->
+  <div style="font-family:'Jost',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;">Domain Triage Matrix · Clinical Priority Guide</div>
+  <div style="font-size:13px; font-weight:400; color:rgba(253,250,245,0.88); margin-bottom:14px; line-height:1.6;">For each domain, circle the triage level based on the patient's responses. Use the anchor descriptions below each domain name as your guide. Flag any domain at Red — these direct your initial assessment focus.</div>
+
+  <div style="border:1px solid rgba(253,250,245,0.8); overflow:hidden; margin-bottom:20px;">
+
+    <!-- Header row -->
+    <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; background:rgba(253,250,245,0.8); border-bottom:1px solid rgba(253,250,245,0.8);">
+      <div style="padding:8px 14px; font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:rgba(253,250,245,0.8);">Domain &amp; Triage Anchors</div>
+      <div style="padding:8px 14px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#7A8C6E; text-align:center; border-left:1px solid rgba(253,250,245,0.8);">Green<br><span style="font-weight:400; letter-spacing:0;">Monitor / Educate</span></div>
+      <div style="padding:8px 14px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#C9A96E; text-align:center; border-left:1px solid rgba(253,250,245,0.8);">Amber<br><span style="font-weight:400; letter-spacing:0;">Structured Tx</span></div>
+      <div style="padding:8px 14px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#C4714A; text-align:center; border-left:1px solid rgba(253,250,245,0.8);">Red<br><span style="font-weight:400; letter-spacing:0;">Priority / Refer</span></div>
+    </div>
+
+    <!-- Bladder -->
+    <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; border-bottom:1px solid rgba(253,250,245,0.8);">
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:500; color:var(--cream); margin-bottom:4px;">Bladder / Leakage</div>
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.8); line-height:1.55;">S1 Q1–3 · ICIQ score · frequency &amp; urgency pattern · pad use · activity avoidance</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Occasional leakage, small amount, ICIQ 1–5, no avoidance</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Leakage 2–3×/week, moderate amount, ICIQ 6–12, some avoidance</div>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Daily/constant leakage, large amount, ICIQ 13+, pad-dependent, significant avoidance</div>
+      </div>
+    </div>
+
+    <!-- Prolapse -->
+    <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; border-bottom:1px solid rgba(253,250,245,0.8);">
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:500; color:var(--cream); margin-bottom:4px;">Prolapse Symptoms</div>
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.8); line-height:1.55;">S2 Q1–5 · bulge sensation · heaviness · end-of-day worsening · incomplete emptying</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Mild heaviness only, no bulge, no emptying difficulty, no positional worsening</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Occasional bulge or heaviness, worsens with activity or end of day, mild emptying difficulty</div>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Visible or palpable bulge, significant emptying difficulty, limits activity — refer for grading if not yet staged</div>
+      </div>
+    </div>
+
+    <!-- Bowel -->
+    <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; border-bottom:1px solid rgba(253,250,245,0.8);">
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:500; color:var(--cream); margin-bottom:4px;">Bowel Function</div>
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.8); line-height:1.55;">S3 Q1–6 · straining · incomplete evacuation · urgency · any leakage · frequency</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Occasional straining, no urgency, no leakage, BM every 1–3 days</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Regular straining, incomplete evacuation, urgency without leakage, BM every 3–4 days</div>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Any fecal leakage, severe straining, BM every 4+ days, pain with defecation — consider GI/colorectal co-management</div>
+      </div>
+    </div>
+
+    <!-- Pain -->
+    <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; border-bottom:1px solid rgba(253,250,245,0.8);">
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:500; color:var(--cream); margin-bottom:4px;">Pelvic Pain</div>
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.8); line-height:1.55;">S4 Q1–5 · NRS score · location · timing · duration · history of dismissal</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">NRS 1–3, intermittent, single location, less than 3 months, no functional impact</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">NRS 4–6, multiple locations or triggers, 3–12 months, some functional limitation</div>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">NRS 7+, chronic (&gt;12 months), widespread or constant, significant functional loss — screen for central sensitization, consider multidisciplinary referral</div>
+      </div>
+    </div>
+
+    <!-- Movement -->
+    <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; border-bottom:1px solid rgba(253,250,245,0.8);">
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:500; color:var(--cream); margin-bottom:4px;">Movement / Exercise</div>
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.8); line-height:1.55;">S5 Q1–5 · activity limitation · avoidance · prolapse sx with loading · breath-holding pattern</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Symptoms with high-impact only, no activity avoidance, no prolapse loading symptoms</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Symptoms with moderate loading, has reduced some activity, occasional prolapse loading symptoms</div>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Has stopped activities, prolapse or leakage symptoms with low-level loading (walking, stairs), significant exercise avoidance</div>
+      </div>
+    </div>
+
+    <!-- Sexual -->
+    <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; border-bottom:1px solid rgba(253,250,245,0.8);">
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:500; color:var(--cream); margin-bottom:4px;">Sexual / Intimate Function</div>
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.8); line-height:1.55;">S6 Q1–5 · frequency of pain · penetration difficulty · leakage · global impact score · hormonal context</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Seldom or never pain, no penetration difficulty, impact score 0–3</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Sometimes pain, some avoidance, impact score 4–6, hormonal context present</div>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Usually or always pain, penetration difficulty or avoidance, impact score 7+, possible vaginismus pattern — specialist collaboration recommended</div>
+      </div>
+    </div>
+
+    <!-- QoL -->
+    <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr;">
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:15px; font-weight:500; color:var(--cream); margin-bottom:4px;">Quality of Life</div>
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.8); line-height:1.55;">S7 Q1–5 · social avoidance · bathroom planning · emotional impact · global NRS · symptom duration</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Minimal lifestyle adaptation, low emotional impact, global NRS 0–3, symptoms less than 1 year</div>
+      </div>
+      <div style="padding:12px 14px; border-right:1px solid rgba(253,250,245,0.8);">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Some social modification, moderate emotional impact, global NRS 4–6, symptoms 1–3 years</div>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.55;">Significant lifestyle restriction, high emotional burden, global NRS 7+, symptoms 3+ years — screen for depression/anxiety, consider psychology referral</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLINICAL ACTION TIERS -->
+  <div style="font-family:'Jost',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;">Clinical Action Tiers</div>
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-bottom:20px;">
+    <div style="background:rgba(122,140,110,0.15); border-top:3px solid #7A8C6E; padding:16px 18px;">
+      <div style="font-family:'Jost',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#7A8C6E; margin-bottom:8px;">Green · Monitor &amp; Educate</div>
+      <div style="font-size:13px; font-weight:400; color:rgba(253,250,245,0.9); line-height:1.65;">All domains Green, or 1 domain Amber with no functional limitation. Focus: education, pelvic floor awareness, lifestyle optimization, preventive exercise. Consider 2–4 sessions to establish baseline and home program.</div>
+    </div>
+    <div style="background:rgba(201,169,110,0.12); border-top:3px solid #C9A96E; padding:16px 18px;">
+      <div style="font-family:'Jost',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#C9A96E; margin-bottom:8px;">Amber · Structured Treatment</div>
+      <div style="font-size:13px; font-weight:400; color:rgba(253,250,245,0.9); line-height:1.65;">1–2 domains Amber, or 1 domain Red with functional limitation. Focus: targeted pelvic floor rehabilitation across flagged domains. Expect 6–12 sessions with progressive loading. Reassess at 6 weeks.</div>
+    </div>
+    <div style="background:rgba(196,113,74,0.12); border-top:3px solid #C4714A; padding:16px 18px;">
+      <div style="font-family:'Jost',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#C4714A; margin-bottom:8px;">Red · Priority &amp; Collaborative Care</div>
+      <div style="font-size:13px; font-weight:400; color:rgba(253,250,245,0.9); line-height:1.65;">2+ domains Red, or any domain Red with significant psychosocial burden. Focus: prioritize highest-impact domains, initiate multidisciplinary referrals as indicated, coordinate care. Reassess at 4 weeks.</div>
+    </div>
+  </div>
+
+  <!-- PATTERN FLAGS -->
+  <div style="font-family:'Jost',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;">Clinical Pattern Flags · Common Presentations to Recognize</div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px; margin-bottom:20px;">
+    <div style="background:rgba(253,250,245,0.8); padding:14px 16px; border-left:2px solid rgba(196,113,74,0.5);">
+      <div style="font-size:10px; font-weight:700; color:rgba(253,250,245,0.9); margin-bottom:5px;">Hypertonic / Overactive Pelvic Floor</div>
+      <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.6;">Pelvic pain (esp. with sitting or intercourse) + urgency/frequency + constipation or straining + tailbone pain. <em>Avoid kegel-first approach. Prioritize downtraining, breathing, manual therapy.</em></div>
+    </div>
+    <div style="background:rgba(253,250,245,0.8); padding:14px 16px; border-left:2px solid rgba(201,169,110,0.5);">
+      <div style="font-size:10px; font-weight:700; color:rgba(253,250,245,0.9); margin-bottom:5px;">Hypotonic / Underactive Pelvic Floor</div>
+      <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.6;">Stress leakage + prolapse heaviness + activity avoidance + low global impact score. <em>Progressive loading, The Knack, breath coordination, functional positioning progression.</em></div>
+    </div>
+    <div style="background:rgba(253,250,245,0.8); padding:14px 16px; border-left:2px solid rgba(122,140,110,0.5);">
+      <div style="font-size:10px; font-weight:700; color:rgba(253,250,245,0.9); margin-bottom:5px;">Mixed Presentation</div>
+      <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.6;">Stress + urgency leakage + pelvic pain + bowel involvement. Assess tone first — mixed presentations often have a dominant component. Treat hypertonicity before adding strengthening.</div>
+    </div>
+    <div style="background:rgba(253,250,245,0.8); padding:14px 16px; border-left:2px solid rgba(155,78,42,0.5);">
+      <div style="font-size:10px; font-weight:700; color:rgba(253,250,245,0.9); margin-bottom:5px;">Chronic Pelvic Pain / Central Sensitization</div>
+      <div style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.85); line-height:1.6;">Pain 7+ NRS + 12+ months duration + multiple locations + high QoL burden + prior dismissal by providers. <em>Prioritize therapeutic alliance, pain neuroscience education, graded exposure. Psychology referral strongly indicated.</em></div>
+    </div>
+  </div>
+
+  <!-- GOAL + NOTES -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px;">
+    <div class="goal-box" style="margin-top:0;">
+      <div class="goal-box-label">Patient's Stated Treatment Goal (Section 7, Q6) — This is your north star</div>
+      <div class="goal-write-lines">
+        <div class="goal-write-line"></div>
+        <div class="goal-write-line"></div>
+      </div>
+    </div>
+    <div style="background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.2); border-left:3px solid var(--gold); padding:16px 18px;">
+      <div style="font-family:'Jost',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;">Clinician Notes &amp; Referral Plan</div>
+      <div style="border-bottom:1px solid rgba(201,169,110,0.2); height:22px; margin-bottom:10px;"></div>
+      <div style="border-bottom:1px solid rgba(201,169,110,0.2); height:22px; margin-bottom:10px;"></div>
+      <div style="border-bottom:1px solid rgba(201,169,110,0.2); height:22px;"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px; padding:12px 16px; background:rgba(253,250,245,0.8); border:1px solid rgba(253,250,245,0.8);">
+    <p style="font-size:14px; font-weight:400; color:rgba(253,250,245,0.8); line-height:1.65;"><strong style="color:rgba(253,250,245,0.88);">Clinical Triage Tool Note:</strong> This matrix is a clinical decision-support guide developed by Dr. Alli, PT, DPT, based on 20+ years of pelvic floor clinical practice. It is not a validated psychometric instrument and triage designations should be interpreted within the context of full clinical assessment. The ICIQ-UI SF scoring is reproduced from the validated published instrument (Avery et al., 2004) and may be used freely in clinical and research settings per ICIQ guidelines.</p>
+  </div>
+</div>
+
+
+<!-- ════ REFERENCES ════ -->
+<div class="references">
+  <div class="references-label">Validated Tool Citations</div>
+  <div class="ref-item" data-num="1.">Avery K, Donovan J, Peters TJ, Shaw C, Gotoh M, Abrams P. ICIQ: a brief and robust measure for evaluating the symptoms and impact of urinary incontinence. <em>Neurourology and Urodynamics.</em> 2004;23(4):322–330. <strong>ICIQ-UI SF</strong> — Sections 1, 7.</div>
+  <div class="ref-item" data-num="2.">Barber MD, Walters MD, Bump RC. Short forms of two condition-specific quality-of-life questionnaires for women with pelvic floor disorders (PFDI-20 and PFIQ-7). <em>American Journal of Obstetrics &amp; Gynecology.</em> 2005;193(1):103–113. <strong>PFDI-20</strong> (UDI-6, POPDI-6, CRADI-8) — Sections 1–3, 5. <strong>PFIQ-7</strong> — Sections 5–7.</div>
+  <div class="ref-item" data-num="3.">Rogers RG, Coates KW, Kammerer-Doak D, Khalsa S, Qualls C. A short form of the Pelvic Organ Prolapse/Urinary Incontinence Sexual Questionnaire (PISQ-12). <em>International Urogynecology Journal.</em> 2003;14(3):164–168. <strong>PISQ-12</strong> — Section 6.</div>
+  <div class="ref-item" data-num="4.">Farrar JT, Young JP, LaMoreaux L, Werth JL, Poole RM. Clinical importance of changes in chronic pain intensity measured on an 11-point numerical pain rating scale. <em>Pain.</em> 2001;94(2):149–158. <strong>Numeric Rating Scale (NRS)</strong> — Section 4.</div>
+  <div class="ref-item" data-num="5.">Barber MD, et al. Further validation of the short form versions of the Pelvic Floor Distress Inventory (PFDI) and Pelvic Floor Impact Questionnaire (PFIQ). <em>Neurourology and Urodynamics.</em> 2011;30(4):541–546.</div>
+</div>
+
+<!-- ════ DISCLAIMER ════ -->
+<div class="disclaimer">
+  <p><strong>About this handout:</strong> Questions in this form are adapted or directly informed by validated, peer-reviewed patient-reported outcome measures for pelvic floor disorders. This handout is designed as a patient-reported intake tool to facilitate clinical conversation and should be interpreted in the context of a full clinical assessment by a licensed provider. It does not constitute a diagnostic instrument, clinical evaluation, or treatment plan. Developed by Dr. Alli, PT, DPT — Natural Movement Mechanics · naturalmovementmechanics.com · For educational and clinical facilitation purposes only.</p>
+</div>
+
+<footer>
+  <div style="background:var(--cream); display:inline-block; padding:12px 16px 8px; border-bottom:2px solid var(--sage);">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 20 460 110" width="240" height="74">
+      <defs><style>.ft-bn{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:500;fill:#3D2B1F;letter-spacing:.02em}.ft-sn{font-family:'Jost',Arial,sans-serif;font-size:15px;font-weight:600;fill:#3D2B1F;letter-spacing:.3em}.ft-tl{font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;font-weight:600;font-style:italic;fill:#9B4E2A;letter-spacing:.08em}</style></defs>
+      <g transform="translate(115,118) scale(0.7) translate(-100,-155)">
+        <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+        <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+        <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+        <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+        <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <line x1="175" y1="64" x2="500" y2="64" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+      <text x="178" y="58" class="ft-bn">Natural Movement</text>
+      <text x="180" y="80" class="ft-sn">MECHANICS</text>
+      <text x="180" y="103" class="ft-tl">rooted in science · free in movement</text>
+    </svg>
+  </div>
+  <p>Dr. Alli · PT, DPT · naturalmovementmechanics.com<br>© Natural Movement Mechanics · For educational and clinical facilitation purposes only.</p>
+</footer>
+
+</body>
+</html>
