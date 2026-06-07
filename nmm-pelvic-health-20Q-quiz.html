@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is Your Body Trying to Tell You Something? | NMM Self-Check</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap');
+
+  :root {
+    --terracotta: #C4714A;
+    --terracotta-light: #d4896a;
+    --sage: #7A8C6E;
+    --sage-light: #9aac8e;
+    --cream: #F5F0E8;
+    --cream-dark: #EDE6D6;
+    --brown: #3D2B1F;
+    --gold: #C9A96E;
+    --gold-light: #dfc090;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background-color: var(--cream);
+    color: var(--brown);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 80% 10%, rgba(196,113,74,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 10% 80%, rgba(122,140,110,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 30% at 50% 50%, rgba(201,169,110,0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── LOGO ── */
+  .logo-wrap {
+    text-align: center;
+    margin-bottom: 28px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .logo-wrap svg {
+    max-width: 100%;
+    width: 480px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+    animation: fadeDown 0.8s 0.1s ease both;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--brown);
+    margin-bottom: 8px;
+  }
+
+  h1 em { font-style: italic; color: var(--terracotta); }
+
+  .subtitle {
+    font-size: 14px;
+    color: var(--sage);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    margin: 16px auto;
+    border-radius: 1px;
+  }
+
+  .creator-note {
+    display: inline-block;
+    margin-top: 16px;
+    background: rgba(201,169,110,0.15);
+    border: 1px solid var(--gold-light);
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 12px;
+    color: #7a5c2e;
+    line-height: 1.6;
+    font-style: italic;
+    max-width: 520px;
+  }
+
+  .creator-note strong { font-style: normal; font-weight: 600; color: var(--brown); }
+
+  /* ── ONE-LINER ── */
+  .oneliner {
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--sage);
+    font-style: italic;
+    margin: 20px 0 8px;
+    line-height: 1.7;
+    padding: 10px 16px;
+    border-top: 1px solid var(--cream-dark);
+    border-bottom: 1px solid var(--cream-dark);
+    animation: fadeIn 0.8s 0.3s ease both;
+  }
+
+  /* ── GRADE KEY ── */
+  .grade-key {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 24px 0 32px;
+    animation: fadeIn 0.8s 0.4s ease both;
+  }
+
+  .grade-pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border: 1.5px solid;
+  }
+
+  .grade-pill.low    { border-color: var(--sage-light); color: var(--sage); background: rgba(122,140,110,0.08); }
+  .grade-pill.mod    { border-color: var(--gold); color: #8a6d3a; background: rgba(201,169,110,0.1); }
+  .grade-pill.high   { border-color: var(--terracotta-light); color: var(--terracotta); background: rgba(196,113,74,0.08); }
+
+  /* ── PROGRESS ── */
+  .progress-wrap { margin-bottom: 36px; animation: fadeIn 0.8s 0.5s ease both; }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 8px;
+  }
+
+  .progress-track { height: 4px; background: var(--cream-dark); border-radius: 2px; overflow: hidden; }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    border-radius: 2px;
+    transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+    width: 0%;
+  }
+
+  /* ── CARDS ── */
+  .question-card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(61,43,31,0.08);
+    box-shadow: 0 2px 16px rgba(61,43,31,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeUp 0.45s ease both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .question-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--terracotta), var(--gold));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .question-card.answered::before { opacity: 1; }
+  .question-card:hover { transform: translateY(-1px); box-shadow: 0 4px 24px rgba(61,43,31,0.1); }
+
+  .q-number {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .q-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--brown);
+    margin-bottom: 6px;
+  }
+
+  .q-aside {
+    font-size: 12.5px;
+    color: #6a5a4a;
+    font-style: italic;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    padding-left: 12px;
+    border-left: 2px solid var(--gold-light);
+  }
+
+  .options { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .option-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 10px 16px;
+    border: 1.5px solid var(--cream-dark);
+    border-radius: 6px;
+    background: var(--cream);
+    color: var(--brown);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .option-btn:hover { border-color: var(--terracotta); background: rgba(196,113,74,0.06); }
+  .option-btn.selected-yes      { border-color: var(--terracotta); background: rgba(196,113,74,0.12); color: var(--terracotta); font-weight: 500; }
+  .option-btn.selected-sometimes{ border-color: var(--gold); background: rgba(201,169,110,0.12); color: #8a6d3a; font-weight: 500; }
+  .option-btn.selected-no       { border-color: var(--sage); background: rgba(122,140,110,0.12); color: var(--sage); font-weight: 500; }
+
+  /* ── SUBMIT ── */
+  .submit-wrap { text-align: center; margin-top: 32px; }
+
+  .submit-btn {
+    display: inline-block;
+    padding: 16px 48px;
+    background: linear-gradient(135deg, var(--terracotta), #b85e38);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(196,113,74,0.3);
+  }
+
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,113,74,0.4); }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .answer-hint { font-size: 12px; color: var(--sage); margin-top: 12px; letter-spacing: 0.05em; }
+
+  /* ── RESULTS ── */
+  .results-panel {
+    display: none;
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid rgba(61,43,31,0.08);
+    box-shadow: 0 8px 48px rgba(61,43,31,0.1);
+    text-align: center;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .results-panel.show { display: block; }
+
+  .result-icon { font-size: 3rem; margin-bottom: 16px; }
+
+  .result-level { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+  .result-level.low  { color: var(--sage); }
+  .result-level.mod  { color: #8a6d3a; }
+  .result-level.high { color: var(--terracotta); }
+
+  .result-grade-badge {
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    border: 1.5px solid;
+  }
+
+  .result-grade-badge.low  { border-color: var(--sage); color: var(--sage); background: rgba(122,140,110,0.1); }
+  .result-grade-badge.mod  { border-color: var(--gold); color: #8a6d3a; background: rgba(201,169,110,0.12); }
+  .result-grade-badge.high { border-color: var(--terracotta); color: var(--terracotta); background: rgba(196,113,74,0.1); }
+
+  .result-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--brown);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .result-score-display {
+    font-size: 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    color: var(--terracotta);
+    line-height: 1;
+    margin: 16px 0;
+  }
+
+  .result-score-display span { font-size: 18px; color: var(--sage); }
+
+  .result-message {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #5a4a3a;
+    margin-bottom: 24px;
+    text-align: left;
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 20px 24px;
+  }
+
+  .result-message strong { color: var(--brown); }
+
+  .result-cta {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, var(--sage), #5a6e50);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(122,140,110,0.3);
+    margin: 6px;
+  }
+
+  .result-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(122,140,110,0.4); }
+
+  .result-cta.primary {
+    background: linear-gradient(135deg, var(--terracotta), #b85e38);
+    box-shadow: 0 4px 16px rgba(196,113,74,0.3);
+  }
+
+  .result-cta.primary:hover { box-shadow: 0 8px 24px rgba(196,113,74,0.4); }
+
+  .reset-btn {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 24px;
+    background: transparent;
+    border: 1.5px solid var(--cream-dark);
+    border-radius: 6px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .reset-btn:hover { border-color: var(--sage); color: var(--brown); }
+
+  .disclaimer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--sage);
+    margin-top: 40px;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+
+  .category-header {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin: 32px 0 12px;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .category-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold-light), transparent);
+  }
+
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeUp   { from { opacity:0; transform:translateY(16px);  } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+
+  .question-card:nth-child(1)  { animation-delay:0.04s; }
+  .question-card:nth-child(2)  { animation-delay:0.08s; }
+  .question-card:nth-child(3)  { animation-delay:0.12s; }
+  .question-card:nth-child(4)  { animation-delay:0.16s; }
+  .question-card:nth-child(5)  { animation-delay:0.20s; }
+  .question-card:nth-child(6)  { animation-delay:0.24s; }
+  .question-card:nth-child(7)  { animation-delay:0.28s; }
+  .question-card:nth-child(8)  { animation-delay:0.32s; }
+  .question-card:nth-child(9)  { animation-delay:0.36s; }
+  .question-card:nth-child(10) { animation-delay:0.40s; }
+  .question-card:nth-child(11) { animation-delay:0.44s; }
+  .question-card:nth-child(12) { animation-delay:0.48s; }
+  .question-card:nth-child(13) { animation-delay:0.52s; }
+  .question-card:nth-child(14) { animation-delay:0.56s; }
+  .question-card:nth-child(15) { animation-delay:0.60s; }
+  .question-card:nth-child(16) { animation-delay:0.64s; }
+  .question-card:nth-child(17) { animation-delay:0.68s; }
+  .question-card:nth-child(18) { animation-delay:0.72s; }
+  .question-card:nth-child(19) { animation-delay:0.76s; }
+  .question-card:nth-child(20) { animation-delay:0.80s; }
+
+  @media (max-width:520px) {
+    .logo-wrap svg { width: 100%; }
+    .question-card { padding:20px; }
+    .results-panel { padding:28px 20px; }
+    .options { gap:6px; }
+    .option-btn { font-size:12px; padding:9px 10px; }
+    .grade-key { gap:6px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- NMM LOGO -->
+  <div class="logo-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 130" width="620" height="130">
+      <defs>
+        <style>
+          .brand-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 40px; font-weight: 500; fill: #3D2B1F; letter-spacing: 0.02em; }
+          .sub-name   { font-family: 'Jost', Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #3D2B1F; letter-spacing: 0.3em; }
+          .tagline    { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 16px; font-weight: 600; font-style: italic; fill: #9B4E2A; letter-spacing: 0.08em; }
+        </style>
+      </defs>
+      <rect width="620" height="130" fill="#F5F0E8"/>
+      <g transform="translate(115, 118) scale(0.7) translate(-100, -155)">
+        <line x1="100" y1="148" x2="100" y2="72" stroke="#3D2B1F" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="100" y1="105" x2="68" y2="82" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="100" y1="95" x2="130" y2="75" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <line x1="68" y1="82" x2="55" y2="70" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="130" y1="75" x2="142" y2="63" stroke="#3D2B1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="100" y1="72" x2="100" y2="58" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="100" cy="45" r="22" fill="#7A8C6E" opacity="0.92"/>
+        <circle cx="72" cy="55" r="17" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="128" cy="52" r="18" fill="#7A8C6E" opacity="0.88"/>
+        <circle cx="56" cy="65" r="12" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="144" cy="60" r="13" fill="#8a9c7e" opacity="0.82"/>
+        <circle cx="83" cy="35" r="13" fill="#8a9c7e" opacity="0.85"/>
+        <circle cx="116" cy="33" r="12" fill="#8a9c7e" opacity="0.85"/>
+        <circle cx="74" cy="118" r="5.5" fill="#C4714A"/>
+        <line x1="74" y1="124" x2="74" y2="140" stroke="#C4714A" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="62" y2="120" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="128" x2="84" y2="132" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="66" y2="152" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="74" y1="140" x2="82" y2="150" stroke="#C4714A" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+      <line x1="175" y1="64" x2="610" y2="64" stroke="#C4714A" stroke-width="0.75" opacity="0.5"/>
+      <text x="178" y="58" class="brand-name">Natural Movement</text>
+      <text x="180" y="80" class="sub-name">MECHANICS</text>
+      <text x="180" y="103" class="tagline">rooted in science · free in movement</text>
+    </svg>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Is Your Body <em>Trying<br>to Tell You</em> Something?</h1>
+    <div class="divider"></div>
+    <p class="subtitle">A pelvic & musculoskeletal self-check — clinically informed,<br>mercifully short, and mildly entertaining.</p>
+    <div class="creator-note">
+      <strong>A note before you begin:</strong> This quiz was created by me, Alli Gannon, PT, DPT — drawn from 23+ years of clinical experience and a deep appreciation for telling it like it is. It is <em>not</em> a validated research instrument, a formal screening tool, or a substitute for an actual evaluation. Think of it as a knowledgeable friend asking you the right questions over coffee — not a clinician handing you a diagnosis on a clipboard.
+    </div>
+  </div>
+
+  <!-- ONE-LINER -->
+  <p class="oneliner">Some questions are specific to female anatomy — if they don't apply to you, simply skip them. Answer what applies to your body. You know yourself best.</p>
+
+  <!-- GRADE KEY -->
+  <div class="grade-key">
+    <div class="grade-pill low">🌿 Just Curious</div>
+    <div class="grade-pill mod">🌾 Worth a Conversation</div>
+    <div class="grade-pill high">🌻 Time to Call in the Pros</div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-label">
+      <span>Your progress</span>
+      <span id="progressText">0 of 20 answered</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quizSection">
+
+    <div class="category-header">Section 1 — The Plumbing Department</div>
+
+    <div class="question-card" data-q="1">
+      <div class="q-number">Question 01</div>
+      <div class="q-text">The moment you put your key in the front door, does your bladder suddenly transform into a screaming toddler who cannot wait one more second and will not be negotiated with?</div>
+      <div class="q-aside">This is called "key-in-lock urgency" — and it's your bladder being a deeply dramatic roommate who signed no lease, pays no rent, and still makes all the rules. It's also very treatable.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,1,'yes',2)">Every single time</button>
+        <button class="option-btn" onclick="answer(this,1,'sometimes',1)">Sometimes</button>
+        <button class="option-btn" onclick="answer(this,1,'no',0)">Nope</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="2">
+      <div class="q-number">Question 02</div>
+      <div class="q-text">Do you leak when you sneeze, laugh, cough, jump, or — the holy trinity — all three in rapid succession at someone's birthday party?</div>
+      <div class="q-aside">Welcome to stress urinary incontinence, which affects roughly 1 in 3 women and approximately 100% of people who have never been told it's fixable. Spoiler: it's fixable. You don't have to retire from trampolines.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,2,'yes',2)">Yes, regularly</button>
+        <button class="option-btn" onclick="answer(this,2,'sometimes',1)">Occasionally</button>
+        <button class="option-btn" onclick="answer(this,2,'no',0)">No leaks</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="3">
+      <div class="q-number">Question 03</div>
+      <div class="q-text">Do you feel a heaviness, pressure, or "something is not where it used to be" sensation — especially after a long day on your feet?</div>
+      <div class="q-aside">Your pelvic organs are supported by a hammock of muscle and connective tissue. If that hammock has had a rough few years — pregnancy, heavy lifting, the general chaos of existing — it may need some attention. Not an emergency. But not nothing.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,3,'yes',2)">Yes</button>
+        <button class="option-btn" onclick="answer(this,3,'sometimes',1)">Occasionally</button>
+        <button class="option-btn" onclick="answer(this,3,'no',0)">No</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="4">
+      <div class="q-number">Question 04</div>
+      <div class="q-text">Are you visiting the bathroom more than 8 times a day, or waking up at night more than once — when you'd really rather be unconscious?</div>
+      <div class="q-aside">Your bladder is trainable. It is not your boss. It just thinks it is — and it has been getting away with it because nobody told it otherwise. We can have that conversation.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,4,'yes',2)">Yes</button>
+        <button class="option-btn" onclick="answer(this,4,'sometimes',1)">Some days/nights</button>
+        <button class="option-btn" onclick="answer(this,4,'no',0)">No</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="5">
+      <div class="q-number">Question 05</div>
+      <div class="q-text">Do you strain, hold your breath, or find yourself genuinely negotiating with your bowels like they're a difficult contractor who sets their own timeline and answers to no one?</div>
+      <div class="q-aside">Constipation and pelvic floor dysfunction are far more connected than most people realize. Chronic straining puts real downward pressure on the very structures we're trying to support. If your bathroom visits have become a whole event requiring preparation and optimism, that's worth addressing.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,5,'yes',2)">Yes, regularly</button>
+        <button class="option-btn" onclick="answer(this,5,'sometimes',1)">Sometimes</button>
+        <button class="option-btn" onclick="answer(this,5,'no',0)">No issues</button>
+      </div>
+    </div>
+
+    <div class="category-header">Section 2 — Pain, Pressure & the Uninvited Guests</div>
+
+    <div class="question-card" data-q="6">
+      <div class="q-number">Question 06</div>
+      <div class="q-text">Do you have pain or discomfort during sex, with tampon use, or with any internal pressure — the kind you've possibly just started quietly avoiding?</div>
+      <div class="q-aside">Pain with intimacy is genuinely common, wildly under-discussed, and often met with the world's least helpful response: "just relax." There are actual reasons this happens. There are actual solutions. You are not imagining it and you don't have to just get used to it.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,6,'yes',2)">Yes</button>
+        <button class="option-btn" onclick="answer(this,6,'sometimes',1)">Sometimes</button>
+        <button class="option-btn" onclick="answer(this,6,'no',0)">No</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="7">
+      <div class="q-number">Question 07</div>
+      <div class="q-text">Do you have ongoing low back, hip, tailbone, or pelvic pain that hangs around like a houseguest who missed the hint that the visit ended three weeks ago?</div>
+      <div class="q-aside">Persistent pain in this region is almost always muscular, movement-related, or a coordination problem between structures that stopped talking to each other. That's good news — it means there's something to work with. Your body isn't broken; it's just holding a grudge.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,7,'yes',2)">Yes, regularly</button>
+        <button class="option-btn" onclick="answer(this,7,'sometimes',1)">Off and on</button>
+        <button class="option-btn" onclick="answer(this,7,'no',0)">No pain</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="8">
+      <div class="q-number">Question 08</div>
+      <div class="q-text">Do you have a scar from a C-section, episiotomy, or abdominal surgery that feels tight, numb, or pulls in ways that travel farther than you'd expect?</div>
+      <div class="q-aside">Scar tissue doesn't stay politely where it forms. It can adhere to surrounding layers and quietly pull on structures nowhere near the original site — contributing to bladder symptoms, pelvic pain, or low back tightness years later. This is one of the most underaddressed issues in women's health, full stop.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,8,'yes',2)">Yes</button>
+        <button class="option-btn" onclick="answer(this,8,'sometimes',1)">Possibly</button>
+        <button class="option-btn" onclick="answer(this,8,'no',0)">No / no scar</button>
+      </div>
+    </div>
+
+    <div class="category-header">Section 3 — Movement, Strength & the Body You Live In</div>
+
+    <div class="question-card" data-q="9">
+      <div class="q-number">Question 09</div>
+      <div class="q-text">Have you quietly stopped running, jumping, lifting, hiking, or doing something you used to love — because your body has made it more stressful than enjoyable?</div>
+      <div class="q-aside">Avoidance is a completely reasonable short-term strategy. It's also how people accidentally spend five years not jumping on trampolines. The goal isn't to push through — it's to actually fix the thing so you can stop managing around it.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,9,'yes',2)">Yes</button>
+        <button class="option-btn" onclick="answer(this,9,'sometimes',1)">I modify sometimes</button>
+        <button class="option-btn" onclick="answer(this,9,'no',0)">No avoidance</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="10">
+      <div class="q-number">Question 10</div>
+      <div class="q-text">Do you feel like a specific area of your body is always braced, clenched, or "on guard" — even when you're just sitting there minding your own business?</div>
+      <div class="q-aside">Your body hired a bouncer after some incident it found threatening — and the bouncer never went home. Chronic muscle guarding is your nervous system being overly loyal. Sweet, but exhausting, and absolutely something that can be retrained.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,10,'yes',2)">Yes</button>
+        <button class="option-btn" onclick="answer(this,10,'sometimes',1)">Maybe?</button>
+        <button class="option-btn" onclick="answer(this,10,'no',0)">No</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="11">
+      <div class="q-number">Question 11</div>
+      <div class="q-text">Do you spend most of your day either glued to a chair or standing without a break (no judgment — sedentary jobs are real and the modern world didn't ask your spine for input)?</div>
+      <div class="q-aside">Your hip flexors after a full day of sitting are basically a rubber band left in a hot car — technically still functional, technically not okay. Your body wants movement variety. It is not asking for a lot.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,11,'yes',2)">Yes, most days</button>
+        <button class="option-btn" onclick="answer(this,11,'sometimes',1)">Some days</button>
+        <button class="option-btn" onclick="answer(this,11,'no',0)">I move around</button>
+      </div>
+    </div>
+
+    <div class="category-header">Section 4 — The Stuff Nobody Told You</div>
+
+    <div class="question-card" data-q="12">
+      <div class="q-number">Question 12</div>
+      <div class="q-text">When you notice yourself standing, are you living in a forward collapse — chin jutting out, ribs dropped, tailbone tucked — like your skeleton is slowly trying to return to a seated position?</div>
+      <div class="q-aside">Posture isn't about standing up straight like your grandmother told you. It's about the relationship between your rib cage, pelvis, and the pressure system they manage together. A chronically collapsed or over-tucked posture changes how your pelvic floor has to work — and not in its favor.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,12,'yes',2)">That's me</button>
+        <button class="option-btn" onclick="answer(this,12,'sometimes',1)">Sometimes</button>
+        <button class="option-btn" onclick="answer(this,12,'no',0)">Not really</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="13">
+      <div class="q-number">Question 13</div>
+      <div class="q-text">Do you hold your breath when you lift something heavy, brace hard at the gym, pick up a child, or move furniture — and only remember to exhale when you're lightheaded or someone reminds you?</div>
+      <div class="q-aside">Breath-holding during exertion spikes intra-abdominal pressure and sends that force straight down into the pelvic floor. Think of your pelvic floor less like a load-bearing wall and more like a trampoline — it needs coordinated breathing to manage that pressure properly. The cue is simple: exhale on effort. Every time.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,13,'yes',2)">Yes, definitely</button>
+        <button class="option-btn" onclick="answer(this,13,'sometimes',1)">Sometimes</button>
+        <button class="option-btn" onclick="answer(this,13,'no',0)">No, I breathe</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="14">
+      <div class="q-number">Question 14</div>
+      <div class="q-text">During exercises like sit-ups, crunches, or heavy lifting, do you notice a ridge, dome, or cone shape appearing down the center of your abdomen?</div>
+      <div class="q-aside">This can be a sign of diastasis recti — a separation of the abdominal muscles common postpartum and frequently mistaken for "just a belly." Doming is your body's way of saying "not yet" for that particular load — not "never." The rectus abdominis absolutely needs to be strengthened, but how you get there and in what sequence matters enormously. That's exactly what guidance is for.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,14,'yes',2)">Yes</button>
+        <button class="option-btn" onclick="answer(this,14,'sometimes',1)">I'm not sure</button>
+        <button class="option-btn" onclick="answer(this,14,'no',0)">No</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="15">
+      <div class="q-number">Question 15</div>
+      <div class="q-text">Do you wake up stiff, achy, or unable to find a comfortable position — and does your body seem to need a full reboot before it's willing to cooperate with the day?</div>
+      <div class="q-aside">Morning stiffness that lingers more than a few minutes is your body filing a formal complaint about how it's being loaded — or not moved — during the day. It's often joint irritation, muscle imbalance, or a nervous system running a little too hot. The mattress is rarely the actual villain here.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,15,'yes',2)">Yes, most mornings</button>
+        <button class="option-btn" onclick="answer(this,15,'sometimes',1)">Sometimes</button>
+        <button class="option-btn" onclick="answer(this,15,'no',0)">I wake up fine</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="16">
+      <div class="q-number">Question 16</div>
+      <div class="q-text">Have your feet changed — flatter arches, less stability underfoot, or a sense that your balance just isn't quite what it used to be?</div>
+      <div class="q-aside">Feet are the foundation of the entire kinetic chain — and their relationship to the pelvis is more direct than most people realize. Pregnancy-related laxity can permanently alter arch structure and ankle stability, but even without pregnancy, flat feet affect the knees, hips, pelvis, and pelvic floor. Your feet are load-sharing partners in all of this. They deserve a little credit.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,16,'yes',2)">Yes</button>
+        <button class="option-btn" onclick="answer(this,16,'sometimes',1)">A little</button>
+        <button class="option-btn" onclick="answer(this,16,'no',0)">No change</button>
+      </div>
+    </div>
+
+    <div class="category-header">Section 5 — Life Has Happened to You</div>
+
+    <div class="question-card" data-q="17">
+      <div class="q-number">Question 17</div>
+      <div class="q-text">Are you currently pregnant, in the first two years postpartum, or somewhere in the perimenopause-to-menopause stretch?</div>
+      <div class="q-aside">All three are enormous hormonal and biomechanical transitions. All three are dramatically under-supported by the healthcare system. Postpartum in particular: your body just built and launched an entire human being, and society's recovery plan was six weeks, a co-pay, and the suggestion to do Kegels.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,17,'yes',2)">Yes, currently</button>
+        <button class="option-btn" onclick="answer(this,17,'sometimes',1)">Recently / past</button>
+        <button class="option-btn" onclick="answer(this,17,'no',0)">No</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="18">
+      <div class="q-number">Question 18</div>
+      <div class="q-text">Have you had an injury, surgery, or significant physical or emotional event that your body seems to remember far more vividly than you'd like?</div>
+      <div class="q-aside">The body keeps receipts. This isn't woo — it's neuroscience. Old injuries, unresolved tension, and past trauma can absolutely show up as current physical symptoms. The good news: the body that kept the receipt can also cash it in for something better.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,18,'yes',2)">Yes</button>
+        <button class="option-btn" onclick="answer(this,18,'sometimes',1)">Possibly</button>
+        <button class="option-btn" onclick="answer(this,18,'no',0)">No</button>
+      </div>
+    </div>
+
+    <div class="category-header">Section 6 — The Honest Reckoning</div>
+
+    <div class="question-card" data-q="19">
+      <div class="q-number">Question 19</div>
+      <div class="q-text">Have you Googled your symptoms, received a shrug from a provider, and quietly decided this is just your life now — like a broken dishwasher you've learned to hand-wash around?</div>
+      <div class="q-aside">Acceptance is a virtue. Accepting unnecessary suffering as an inevitable consequence of having a body is not a plan — it's resignation with better vocabulary. You deserve actual options, not just better coping strategies.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,19,'yes',2)">This is painfully me</button>
+        <button class="option-btn" onclick="answer(this,19,'sometimes',1)">Kind of</button>
+        <button class="option-btn" onclick="answer(this,19,'no',0)">No</button>
+      </div>
+    </div>
+
+    <div class="question-card" data-q="20">
+      <div class="q-number">Question 20</div>
+      <div class="q-text">Honestly — are your symptoms making you smaller? Avoiding, hiding, managing, pre-planning, or just generally living around your body instead of in it?</div>
+      <div class="q-aside">Quality of life is a legitimate clinical outcome. If your body is running the itinerary — deciding where you go, what you wear, what you agree to — that's information worth acting on. You should be the one in charge of your schedule. Not your pelvic floor.</div>
+      <div class="options">
+        <button class="option-btn" onclick="answer(this,20,'yes',2)">Yes, significantly</button>
+        <button class="option-btn" onclick="answer(this,20,'sometimes',1)">A little</button>
+        <button class="option-btn" onclick="answer(this,20,'no',0)">Not really</button>
+      </div>
+    </div>
+
+    <div class="submit-wrap">
+      <button class="submit-btn" id="submitBtn" onclick="showResults()" disabled>See What Your Body's Been Saying</button>
+      <p class="answer-hint" id="answerHint">Answer all 20 questions to see your results</p>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-panel" id="resultsPanel">
+    <div class="result-icon"        id="resultIcon"></div>
+    <div class="result-level"       id="resultLevel"></div>
+    <div class="result-grade-badge" id="resultGradeBadge"></div>
+    <div class="result-score-display" id="resultScore"></div>
+    <div class="result-title"       id="resultTitle"></div>
+    <div class="result-message"     id="resultMessage"></div>
+    <div id="resultCTAs"></div>
+    <br>
+    <button class="reset-btn" onclick="resetQuiz()">← Retake the quiz</button>
+  </div>
+
+  <p class="disclaimer">
+    This self-assessment was created by Alli Gannon, PT, DPT for educational purposes only.<br>
+    It is not a validated clinical tool and does not constitute medical advice or diagnosis.<br>
+    If you're experiencing symptoms, please consult a licensed healthcare provider.<br><br>
+    <em>Natural Movement Mechanics · Rooted in science. Free in movement.</em>
+  </p>
+
+</div>
+
+<script>
+  const answers = {};
+  const total = 20;
+
+  function answer(btn, qNum, level, score) {
+    const card = btn.closest('.question-card');
+    card.querySelectorAll('.option-btn').forEach(b => b.className = 'option-btn');
+    btn.classList.add('selected-' + level);
+    answers[qNum] = { level, score };
+    card.classList.add('answered');
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const count = Object.keys(answers).length;
+    const pct   = (count / total) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressText').textContent = `${count} of ${total} answered`;
+    const btn  = document.getElementById('submitBtn');
+    const hint = document.getElementById('answerHint');
+    if (count === total) {
+      btn.disabled = false;
+      hint.textContent = "You're ready — your body has been waiting for you to ask.";
+    } else {
+      btn.disabled = true;
+      const rem = total - count;
+      hint.textContent = `${rem} question${rem !== 1 ? 's' : ''} remaining`;
+    }
+  }
+
+  function showResults() {
+    const totalScore = Object.values(answers).reduce((s, a) => s + a.score, 0);
+    const maxScore   = total * 2;
+    const pct        = totalScore / maxScore;
+
+    let icon, levelText, levelClass, gradeBadge, title, message, ctas;
+
+    if (pct < 0.25) {
+      icon = '🌿'; levelText = 'Low Concern'; levelClass = 'low'; gradeBadge = '🌿 Just Curious';
+      title = "Your body seems relatively at peace with you right now.";
+      message = `<strong>Score: ${totalScore}/${maxScore}</strong><br><br>
+You're not reporting significant pelvic floor or musculoskeletal symptoms — and that's genuinely good news worth acknowledging. Your body and you appear to be on reasonable speaking terms.
+<br><br>
+That said: prevention is dramatically easier than recovery, and life has a way of introducing new variables — stress, injury, hormonal shifts, that one afternoon you moved all the furniture yourself. A little education now is worth a lot of PT appointments later.
+<br><br>
+<strong>You're ahead of the curve. Stay curious.</strong>`;
+      ctas = `<a href="#" class="result-cta">Explore Free Resources</a>`;
+
+    } else if (pct < 0.55) {
+      icon = '🌾'; levelText = 'Worth Addressing'; levelClass = 'mod'; gradeBadge = '🌾 Worth a Conversation';
+      title = "Your body has opinions. It would like them acknowledged.";
+      message = `<strong>Score: ${totalScore}/${maxScore}</strong><br><br>
+You've got some real things going on — not a crisis, but not nothing either. The kind of symptoms that are easy to minimize, work around, and quietly absorb into your daily routine until one day you realize you've been managing around something for years.
+<br><br>
+This is exactly the zone where targeted education and intentional movement make a meaningful difference. You don't need an emergency intervention. You need a plan from someone who actually understands what's happening and why.
+<br><br>
+<strong>The good news: you found your way here — which means you're already the kind of person who does something about things.</strong>`;
+      ctas = `<a href="#" class="result-cta primary">Explore NMM Courses</a><a href="#" class="result-cta">Free 5-Day Challenge</a>`;
+
+    } else {
+      icon = '🌻'; levelText = 'Professional Support Warranted'; levelClass = 'high'; gradeBadge = '🌻 Time to Call in the Pros';
+      title = "Your body has been patient. Remarkably, honestly, patient.";
+      message = `<strong>Score: ${totalScore}/${maxScore}</strong><br><br>
+You are carrying a significant load — and if you've been managing it quietly for a while, that takes real, daily energy that should be going somewhere else entirely.
+<br><br>
+What you're experiencing is not simply "getting older." It is not the permanent price of admission for living in a body. These are <em>treatable, addressable, genuinely improvable</em> issues — and you deserve more than a pamphlet and a shrug.
+<br><br>
+Start with education built specifically for this. Then consider a hands-on evaluation with a pelvic PT near you. Both are worth your time. You, as it turns out, are worth your time.
+<br><br>
+<strong>This is your official permission slip to stop putting yourself last.</strong>`;
+      ctas = `<a href="#" class="result-cta primary">Start with NMM Courses</a><a href="#" class="result-cta">Find a Pelvic PT Near You</a>`;
+    }
+
+    document.getElementById('resultIcon').textContent        = icon;
+    document.getElementById('resultLevel').textContent       = levelText;
+    document.getElementById('resultLevel').className         = 'result-level ' + levelClass;
+    document.getElementById('resultGradeBadge').textContent  = gradeBadge;
+    document.getElementById('resultGradeBadge').className    = 'result-grade-badge ' + levelClass;
+    document.getElementById('resultScore').innerHTML         = totalScore + '<span>/' + maxScore + '</span>';
+    document.getElementById('resultTitle').textContent       = title;
+    document.getElementById('resultMessage').innerHTML       = message;
+    document.getElementById('resultCTAs').innerHTML          = ctas;
+
+    document.getElementById('quizSection').style.display  = 'none';
+    document.getElementById('progressWrap').style.display = 'none';
+    const panel = document.getElementById('resultsPanel');
+    panel.classList.add('show');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function resetQuiz() {
+    Object.keys(answers).forEach(k => delete answers[k]);
+    document.querySelectorAll('.option-btn').forEach(b => b.className = 'option-btn');
+    document.querySelectorAll('.question-card').forEach(c => c.classList.remove('answered'));
+    document.getElementById('resultsPanel').classList.remove('show');
+    document.getElementById('quizSection').style.display  = 'block';
+    document.getElementById('progressWrap').style.display = 'block';
+    document.getElementById('submitBtn').disabled = true;
+    document.getElementById('answerHint').textContent = `Answer all ${total} questions to see your results`;
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
